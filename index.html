@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="background-animation"></div>
+
   <header>
     <div class="lang-switcher">
       <button onclick="setLanguage('lt')">LT</button>
@@ -17,36 +19,48 @@
     <a href="#form" class="btn" data-i18n="cta">Request Quote</a>
   </header>
 
-  <section class="about">
-    <h2 data-i18n="why">Why choose us?</h2>
-    <ul>
-      <li data-i18n="point1">📍 Delivering all over the EU</li>
-      <li data-i18n="point2">💬 Working with individuals and businesses</li>
-      <li data-i18n="point3">⏱ Fast route optimization</li>
-    </ul>
-  </section>
+  <main>
+    <section class="about" id="about">
+      <h2 data-i18n="aboutTitle">About Us</h2>
+      <p data-i18n="aboutText">We are a team of logistics professionals dedicated to delivering your goods across Europe safely and efficiently.</p>
+    </section>
 
-  <section class="how-it-works">
-    <h2 data-i18n="howTitle">How it works</h2>
-    <ol>
-      <li data-i18n="how1">Submit a request</li>
-      <li data-i18n="how2">We find the best transport</li>
-      <li data-i18n="how3">Confirm the route</li>
-      <li data-i18n="how4">We monitor delivery</li>
-    </ol>
-  </section>
+    <section class="services" id="services">
+      <h2 data-i18n="servicesTitle">Our Services</h2>
+      <ul>
+        <li data-i18n="service1">🚛 Full Truck Load (FTL) deliveries</li>
+        <li data-i18n="service2">📦 Parcel and small cargo logistics</li>
+        <li data-i18n="service3">📍 Door-to-door brokerage services</li>
+        <li data-i18n="service4">🛠 Custom transport solutions</li>
+      </ul>
+    </section>
 
-  <section class="form-section" id="form">
-    <h2 data-i18n="formTitle">Transport Request</h2>
-    <form id="requestForm">
-      <input type="text" id="name" placeholder="Name" required />
-      <input type="text" id="from" placeholder="From" required />
-      <input type="text" id="to" placeholder="To" required />
-      <textarea id="details" placeholder="Cargo details"></textarea>
-      <button type="submit" data-i18n="submitBtn">Send</button>
-    </form>
-    <p id="status"></p>
-  </section>
+    <section class="clients" id="clients">
+      <h2 data-i18n="clientsTitle">Our Clients</h2>
+      <p data-i18n="clientsText">We work with local businesses, e-commerce stores, and individuals throughout the EU.</p>
+    </section>
+
+    <section class="projects" id="projects">
+      <h2 data-i18n="projectsTitle">Completed Projects</h2>
+      <ul>
+        <li data-i18n="project1">🔹 100+ successful deliveries from Germany to Lithuania</li>
+        <li data-i18n="project2">🔹 Ongoing partnership with EU-based e-shops</li>
+        <li data-i18n="project3">🔹 Special equipment transport from Belgium to Estonia</li>
+      </ul>
+    </section>
+
+    <section class="form-section" id="form">
+      <h2 data-i18n="formTitle">Transport Request</h2>
+      <form id="requestForm">
+        <input type="text" id="name" placeholder="Name" required />
+        <input type="text" id="from" placeholder="From" required />
+        <input type="text" id="to" placeholder="To" required />
+        <textarea id="details" placeholder="Cargo details"></textarea>
+        <button type="submit" data-i18n="submitBtn">Send</button>
+      </form>
+      <p id="status"></p>
+    </section>
+  </main>
 
   <footer>
     <p>📞 +370 6XX XXX XX | ✉️ info@carspro.lt</p>

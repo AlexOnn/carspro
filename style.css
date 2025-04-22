@@ -1,17 +1,39 @@
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
-  background-color: #f8f9fa;
-  color: #333;
+  color: #fff;
+  position: relative;
+  background-color: #0a0a23;
+}
+
+.background-animation {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 191, 255, 0.15) 0%, transparent 70%);
+  background-size: 200% 200%;
+  animation: backgroundMove 20s linear infinite;
+  z-index: -1;
+}
+
+@keyframes backgroundMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 header {
   background: #0d6efd;
-  color: white;
-  padding: 2em;
   text-align: center;
+  padding: 3em 1em;
+}
+
+.lang-switcher {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 
 .btn {
@@ -24,34 +46,38 @@ header {
   margin-top: 1em;
 }
 
-section {
-  padding: 2em;
-  max-width: 800px;
+main {
+  max-width: 900px;
   margin: auto;
+  padding: 2em;
 }
 
-.form-section form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+section {
+  margin-bottom: 3em;
+}
+
+ul, ol {
+  padding-left: 1.5em;
 }
 
 input, textarea, button {
+  width: 100%;
   padding: 10px;
+  margin-bottom: 10px;
   font-size: 1em;
+  border-radius: 4px;
+  border: none;
 }
 
 button {
   background: #0d6efd;
   color: white;
-  border: none;
   cursor: pointer;
-  border-radius: 5px;
 }
 
 footer {
+  background: #333;
+  color: #ccc;
   text-align: center;
   padding: 1em;
-  background: #333;
-  color: white;
 }
