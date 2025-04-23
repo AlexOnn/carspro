@@ -2,80 +2,134 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CarsPro Logistics</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CarsPro - Vehicle Logistics</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    h1, .btn {
+      font-family: 'Montserrat', sans-serif;
+    }
+  </style>
 </head>
-<body>
-  <div class="background-animation"></div>
 
-  <header class="site-header">
-  <div class="container">
-    <div class="header-top">
-      <img src="carspro-logo.png" alt="CarsPro Logo" class="logo" />
-      <div class="lang-switcher">
-        <button onclick="setLanguage('lt')">LT</button>
-        <button onclick="setLanguage('en')">EN</button>
+<body class="bg-white text-gray-800 font-sans">
+
+  <header class="bg-white shadow p-4">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <img src="carspro-logo.png" alt="CarsPro Logo" class="h-32" />
+      <div>
+        <button onclick="setLanguage('lt')" class="border px-3 py-1 text-sm mr-2">LT</button>
+        <button onclick="setLanguage('en')" class="border px-3 py-1 text-sm">EN</button>
       </div>
     </div>
-    <div class="header-content">
-    <div class="lang-switcher">
-      <button onclick="setLanguage('lt')">LT</button>
-      <button onclick="setLanguage('en')">EN</button>
+    <div class="text-center mt-6">
+      
+    <!--h1 class="text-4xl font-bold tracking-tight text-center">
+      <span class="bg-gradient-to-r from-blue-600 to-red-500 text-transparent bg-clip-text" data-i18n="title">
+        Automotive Logistics
+      </span>
+    </h1-->
+	
+	<!--h1 class="text-4xl font-bold tracking-tight text-center">
+	  <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(to right, #0D3B66, #E63946);" data-i18n="title">
+    Automotive Logistics
+      </span>
+	</h1-->
+	
+	<h1 class="text-4xl font-bold tracking-tight text-center animate-gradient">
+     <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#0D3B66] via-[#E63946] to-[#0D3B66] bg-[length:200%_auto]" data-i18n="title">
+    Automotive Logistics
+     </span>
+    </h1>
+    
+      <p class="text-lg mb-4" data-i18n="subtitle">We organize deliveries across Europe. Door-to-door. Reliable and guaranteed.</p>
+      <a href="#form" class="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700" data-i18n="cta">Request Quote</a>
     </div>
-    <h1 data-i18n="title">🚚 Automotive Logistics</h1>
-    <p data-i18n="subtitle">We organize deliveries across Europe. Door-to-door. Reliable and guaranteed.</p>
-    <a href="#form" class="btn" data-i18n="cta">Request Quote</a>
-      </div>
-  </div>
-</header>
+  </header>
 
-  <main>
-    <section class="about" id="about">
-      <h2 data-i18n="aboutTitle">About Us</h2>
-      <p data-i18n="aboutText">We are a team of logistics professionals dedicated to delivering your cars and machinery across Europe safely and efficiently.</p>
-    </section>
+  <section class="py-12 bg-gray-50">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-2xl font-semibold mb-8">Our Services</h2>
+      <div id="services" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center mt-6"></div>
+    </div>
+  </section>
 
-    <section class="services" id="services">
-      <h2 data-i18n="servicesTitle">Our Services</h2>
-      <ul>
-        <li data-i18n="service1">🚛 Full Truck Load (FTL) deliveries</li>
-        <li data-i18n="service3">📍 Door-to-door cartransporter services</li>
-        <li data-i18n="service4">🛠 Custom transport solutions</li>
-      </ul>
-    </section>
+  <section class="text-center py-10">
+    <h2 class="text-2xl font-semibold mb-6">Key Benefits</h2>
+    <div class="flex justify-center gap-8 text-lg">
+      <div><strong>15+</strong><p>Years Experience</p></div>
+      <div><strong>100%</strong><p>Licensed</p></div>
+      <div><strong>24/7</strong><p>Customer Support</p></div>
+    </div>
+  </section>
 
-    <section class="clients" id="clients">
-      <h2 data-i18n="clientsTitle">Our Clients</h2>
-      <p data-i18n="clientsText">We work with local car traders, and individuals throughout the EU.</p>
-    </section>
+  <section id="form" class="text-center py-10 bg-gray-100">
+    <h2 class="text-2xl font-semibold mb-6">Broker Request Form</h2>
+    <form class="max-w-md mx-auto flex flex-col gap-4">
+      <input type="text" placeholder="Country" class="border px-4 py-2" />
+      <input type="text" placeholder="Car Type" class="border px-4 py-2" />
+      <input type="text" placeholder="Budget" class="border px-4 py-2" />
+      <input type="text" placeholder="Vehicle Identification Number" class="border px-4 py-2" />
+      <button type="submit" class="bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Submit</button>
+    </form>
+  </section>
 
-    <section class="projects" id="projects">
-      <h2 data-i18n="projectsTitle">Completed Projects</h2>
-      <ul>
-        <li data-i18n="project1">🔹 1000+ successful deliveries from Germany to Lithuania</li>
-        <li data-i18n="project2">🔹 Ongoing partnership with EU-based automotive retailers</li>
-        <li data-i18n="project3">🔹 Transportation of special equipment from across the EU to the Baltic countries</li>
-      </ul>
-    </section>
+  
+  <section class="text-center py-10">
+    <h2 class="text-2xl font-semibold mb-6">Shipping Calculator</h2>
+    <form class="max-w-md mx-auto flex flex-col gap-4">
+      <input type="text" placeholder="Pickup location" class="border px-4 py-2" />
+      <input type="text" placeholder="Delivery location" class="border px-4 py-2" />
+      <input type="number" placeholder="Vehicle weight (kg)" class="border px-4 py-2" />
+      <button type="submit" class="bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Calculate</button>
+    </form>
+  </section>
 
-    <section class="form-section" id="form">
-      <h2 data-i18n="formTitle">Transport Request</h2>
-      <form id="requestForm">
-        <input type="text" id="name" placeholder="Name" required />
-        <input type="text" id="from" placeholder="From" required />
-        <input type="text" id="to" placeholder="To" required />
-        <textarea id="details" placeholder="Cargo details"></textarea>
-        <button type="submit" data-i18n="submitBtn">Send</button>
-      </form>
-      <p id="status"></p>
-    </section>
-  </main>
-
-  <footer>
-    <p>📞 +370 6XX XXX XX | ✉️ administration@carspro.eu</p>
+  <footer class="text-center text-sm text-gray-500 py-6">
+    &copy; 2024 CarsPro. All rights reserved.
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    const services = [
+      { icon: "🚗", title: "Car Sourcing", text: "We find and verify vehicles across Europe." },
+      { icon: "🔍", title: "Inspection", text: "Technical and legal checks before purchase." },
+      { icon: '<img src="images/avtovoz-emoji.png" alt="Car Transporter" class="h-10 w-auto mx-auto" />', title: "Transportation", text: "Safe and fast delivery to your location." },
+      { icon: "📝", title: "Customs", text: "We handle all import paperwork." }
+    ];
+
+    const container = document.getElementById("services");
+    services.forEach(service => {
+      const card = document.createElement("div");
+      card.className = "p-4 bg-white shadow rounded";
+      card.innerHTML = `
+        <div class="text-4xl mb-2">${service.icon}</div>
+        <h3 class="text-lg font-bold mb-1">${service.title}</h3>
+        <p class="text-sm text-gray-600">${service.text}</p>
+      `;
+      container.appendChild(card);
+    });
+
+    const translations = {
+      en: {
+        title: "Automotive Logistics",
+        subtitle: "We organize deliveries across Europe. Door-to-door. Reliable and guaranteed.",
+        cta: "Request Quote"
+      },
+      lt: {
+        title: "Automobilių logistika",
+        subtitle: "Organizuojame pristatymus visoje Europoje. Nuo durų iki durų. Patikima ir garantuota.",
+        cta: "Gauti pasiūlymą"
+      }
+    };
+    function setLanguage(lang) {
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        el.textContent = translations[lang][key] || el.textContent;
+      });
+    }
+  </script>
+
 </body>
 </html>
