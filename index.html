@@ -9,7 +9,16 @@
 <body>
   <div class="background-animation"></div>
 
-  <header>
+  <header class="site-header">
+  <div class="container">
+    <div class="header-top">
+      <img src="carspro-logo.png" alt="CarsPro Logo" class="logo" />
+      <div class="lang-switcher">
+        <button onclick="setLanguage('lt')">LT</button>
+        <button onclick="setLanguage('en')">EN</button>
+      </div>
+    </div>
+    <div class="header-content">
     <div class="lang-switcher">
       <button onclick="setLanguage('lt')">LT</button>
       <button onclick="setLanguage('en')">EN</button>
@@ -17,7 +26,9 @@
     <h1 data-i18n="title">🚚 Automotive Logistics</h1>
     <p data-i18n="subtitle">We organize deliveries across Europe. Door-to-door. Reliable and guaranteed.</p>
     <a href="#form" class="btn" data-i18n="cta">Request Quote</a>
-  </header>
+      </div>
+  </div>
+</header>
 
   <main>
     <section class="about" id="about">
