@@ -190,49 +190,9 @@
   }
   </script>
 
-  <!--script>
-    const services = [
-      { icon: "🚗", title: "Car Sourcing", text: "We find and verify vehicles across Europe." },
-      { icon: "🔍", title: "Inspection", text: "Technical and legal checks before purchase." },
-      { icon: '<img src="images/avtovoz-emoji.png" alt="Car Transporter" class="h-10 w-auto mx-auto" />', title: "Transportation", text: "Safe and fast delivery to your location." },
-      { icon: "📝", title: "Customs", text: "We handle all import paperwork." }
-    ];
-
-    const container = document.getElementById("services");
-    services.forEach(service => {
-      const card = document.createElement("div");
-      card.className = "p-4 bg-white shadow rounded";
-      card.innerHTML = `
-        <div class="text-4xl mb-2">${service.icon}</div>
-        <h3 class="text-lg font-bold mb-1">${service.title}</h3>
-        <p class="text-sm text-gray-600">${service.text}</p>
-      `;
-      container.appendChild(card);
-    });
-
-    const translations = {
-      en: {
-        title: "Automotive Logistics",
-        subtitle: "We organize deliveries across Europe. Door-to-door. Reliable and guaranteed.",
-        cta: "Request Quote"
-      },
-      lt: {
-        title: "Automobilių logistika",
-        subtitle: "Organizuojame pristatymus visoje Europoje. Nuo durų iki durų. Patikima ir garantuota.",
-        cta: "Gauti pasiūlymą"
-      }
-    };
-    function setLanguage(lang) {
-      document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.getAttribute("data-i18n");
-        el.textContent = translations[lang][key] || el.textContent;
-      });
-    }
-</script-->
-	
 	<!--calculator-->
 
-	<script>
+  <script>
   // check the route for discount
   function isDiscountedRoute(pickup, delivery) {
   const rules = [
@@ -241,7 +201,7 @@
       to: ["germany", "vokietija", "deutschland"],
       discount: 0.3
     }
-    // можно добавить другие направления
+    // you can add other directions
   ];
 
   const normalize = str => str.toLowerCase().trim();
@@ -261,7 +221,7 @@
   return 0;
 }
 
-  // Автозаполнение адресов
+  // autofills of the addresses
   function initAutocomplete() {
     const options = { types: ["geocode"] };
     new google.maps.places.Autocomplete(document.getElementById("pickup"), options);
@@ -313,17 +273,17 @@
         let basePrice = distanceKm * rate;
         let price = basePrice;
 
-        // Применение минимальной цены
+        // the minimum price application
         if (distanceKm < 100) price = Math.max(price, 250);
         else if (distanceKm >= 320 && distanceKm <= 420) price = Math.max(price, 350);
 
-        // Применение скидки после минимальной цены
+        // Application of the discount
         const discount = isDiscountedRoute(pickup, delivery);
         if (discount > 0) {
           price *= (1 - discount);
         }
 
-        // Вывод результата
+        // Result printing
         let resultHtml = `Distance: ${distanceKm.toFixed(1)} km<br>Total Price: €${price.toFixed(2)}`;
         if (discount > 0) {
           resultHtml += `<div class="text-green-700 text-sm mt-2">
@@ -342,111 +302,6 @@
 
 <!-- Google Maps API -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1Fb-dIQpieKC0rZDNwkJZdMIjYZOHuuE&libraries=places&callback=initAutocomplete" async defer></script>
-
-<!--
-<script>
-  function isDiscountedRoute(pickup, delivery) {
-    const rules = [
-      { from: "Lithuania", to: "Germany", discount: 0.3 },
-      // Добавляй сюда новые маршруты при необходимости
-    ];
-
-    const normalize = str => str.toLowerCase().trim();
-
-    for (const rule of rules) {
-      if (
-        normalize(pickup).includes(rule.from) &&
-        normalize(delivery).includes(rule.to)
-      ) {
-        return rule.discount;
-      }
-    }
-    return 0;
-  }
-	
-  const form = document.getElementById("shipping-form");
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const pickup = document.getElementById("pickup").value.trim();
-    const delivery = document.getElementById("delivery").value.trim();
-    const vehicle = document.getElementById("vehicle").value;
-
-    if (!pickup || !delivery || !vehicle) {
-      alert("Please fill in all fields correctly.");
-      return;
-    }
-
-    const rates = {
-      sedan: 0.60,
-      suv: 0.65,
-      truck: 0.70,
-      van: 0.75,
-      motorcycle: 0.55,
-      bus: 0.80
-    };
-
-    const rate = rates[vehicle];
-    const service = new google.maps.DistanceMatrixService();
-    service.getDistanceMatrix(
-      {
-        origins: [pickup],
-        destinations: [delivery],
-        travelMode: "DRIVING",
-        unitSystem: google.maps.UnitSystem.METRIC,
-      },
-      	    
-      function (response, status) {
-        if (status !== "OK") {
-          alert("Error: " + status);
-          return;
-        }
-
-        const distanceMeters = response.rows[0].elements[0].distance.value;
-        const distanceKm = distanceMeters / 1000;
-		 
-        let price = distanceKm * rate;
-
-	      // Apply discount if LT
-	      const discount = isDiscountedRoute(pickup, delivery);
-    		if (discount > 0) {
-      		price *= (1 - discount);
-    		}
-
-        if (distanceKm < 100) price = Math.max(price, 250);
-        else if (distanceKm >= 320 && distanceKm <= 420) price = Math.max(price, 350);
-
-	let resultHtml = `Distance: ${distanceKm.toFixed(1)} km<br>Total Price: €${price.toFixed(2)}`;
-
-	if (discount > 0) {
-  	resultHtml += `<div class="text-green-700 text-sm mt-2">
-    	A discount of ${Math.round(discount * 100)}% has been applied.
-  		</div>`;
-	}
-
-	//document.getElementById("calc-output").innerHTML =
-	  //`Distance: ${distanceKm.toFixed(1)} km<br>Total Price: €${price.toFixed(2)}`;
-        document.getElementById("calc-output").innerHTML = resultHtml;
-        const resultDiv = document.getElementById("calc-result");
-        resultDiv.classList.remove("hidden");
-        resultDiv.scrollIntoView({ behavior: "smooth" });
-
-        //const resultDiv = document.getElementById("calc-result");
-        //resultDiv.innerHTML =
-         // `Distance: ${distanceKm.toFixed(1)} km<br>Total Price: €${price.toFixed(2)}`;
-        //resultDiv.scrollIntoView({ behavior: "smooth" });
-	}
-    );
-  });
-
-  // Автозаполнение адресов
-  function initAutocomplete() {
-    const options = { types: ["geocode"] };
-    new google.maps.places.Autocomplete(document.getElementById("pickup"), options);
-    new google.maps.places.Autocomplete(document.getElementById("delivery"), options);
-  }
-</script>
 
 <!-- Google Maps API -->
 <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1Fb-dIQpieKC0rZDNwkJZdMIjYZOHuuE&libraries=places&callback=initAutocomplete" async defer></script>-->
