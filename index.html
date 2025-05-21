@@ -183,6 +183,10 @@
     infoBox.textContent = message;
     infoBox.classList.remove("hidden");
     infoBox.scrollIntoView({ behavior: "smooth", block: "center" });
+	  // Automatic hidden in a 5 sec
+    setTimeout(() => {
+      infoBox.classList.add("hidden");
+    }, 5000);
   }
   </script>
 
