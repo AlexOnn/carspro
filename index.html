@@ -132,6 +132,60 @@
       });
     }
   </script>
+	//
+  <script>
+  const form = document.querySelector("form");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const pickup = form.elements[0].value.trim();
+    const delivery = form.elements[1].value.trim();
+    const weight = parseFloat(form.elements[2].value.trim());
+
+    if (!pickup || !delivery || isNaN(weight)) {
+      alert("Please fill in all fields correctly.");
+      return;
+    }
+
+    // Google Maps DistanceMatrix
+    const service = new google.maps.DistanceMatrixService();
+    service.getDistanceMatrix(
+      {
+        origins: [pickup],
+        destinations: [delivery],
+        travelMode: "DRIVING",
+        unitSystem: google.maps.UnitSystem.METRIC,
+      },
+      (response, status) => {
+        if (status !== "OK") {
+          alert("Error: " + status);
+          return;
+        }
+
+        const distanceMeters = response.rows[0].elements[0].distance.value;
+        const distanceKm = distanceMeters / 1000;
+
+        let baseRate = 0.70; // €/km (по умолчанию)
+        let price = distanceKm * baseRate;
+
+        // Пример использования веса в расчётах:
+        if (weight > 2000) price *= 1.1;
+        if (weight > 3000) price *= 1.2;
+
+        // Минимальная цена
+        if (distanceKm < 100) price = Math.max(price, 250);
+        else if (distanceKm >= 320 && distanceKm <= 420) price = Math.max(price, 350);
+
+        const resultDiv = document.getElementById("calc-result");
+        resultDiv.innerHTML = `Distance: ${distanceKm.toFixed(1)} km<br>Total Price: €${price.toFixed(2)}`;
+        resultDiv.scrollIntoView({ behavior: "smooth" });
+      }
+    );
+  });
+</script>
+
+<!-- Google Maps API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1Fb-dIQpieKC0rZDNwkJZdMIjYZOHuuE&libraries=places"></script>
 
 </body>
 </html>
