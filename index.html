@@ -268,11 +268,17 @@
         if (distanceKm < 100) price = Math.max(price, 250);
         else if (distanceKm >= 320 && distanceKm <= 420) price = Math.max(price, 350);
 
+	document.getElementById("calc-output").innerHTML = 
+	  `Distance: ${distanceKm.toFixed(1)} km<br>Total Price: €${price.toFixed(2)}`;
         const resultDiv = document.getElementById("calc-result");
-        resultDiv.innerHTML =
-          `Distance: ${distanceKm.toFixed(1)} km<br>Total Price: €${price.toFixed(2)}`;
+        resultDiv.classList.remove("hidden");
         resultDiv.scrollIntoView({ behavior: "smooth" });
-      }
+
+        //const resultDiv = document.getElementById("calc-result");
+        //resultDiv.innerHTML =
+         // `Distance: ${distanceKm.toFixed(1)} km<br>Total Price: €${price.toFixed(2)}`;
+        //resultDiv.scrollIntoView({ behavior: "smooth" });
+	}
     );
   });
 
