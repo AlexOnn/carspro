@@ -233,6 +233,25 @@
 	<!--calculator-->
 
 <script>
+  function isDiscountedRoute(pickup, delivery) {
+    const rules = [
+      { from: "lt", to: "de", discount: 0.3 },
+      // Добавляй сюда новые маршруты при необходимости
+    ];
+
+    const normalize = str => str.toLowerCase().trim();
+
+    for (const rule of rules) {
+      if (
+        normalize(pickup).includes(rule.from) &&
+        normalize(delivery).includes(rule.to)
+      ) {
+        return rule.discount;
+      }
+    }
+    return 0;
+  }
+	
   const form = document.getElementById("shipping-form");
 
   form.addEventListener("submit", function (e) {
@@ -265,6 +284,7 @@
         travelMode: "DRIVING",
         unitSystem: google.maps.UnitSystem.METRIC,
       },
+      	    
       function (response, status) {
         if (status !== "OK") {
           alert("Error: " + status);
@@ -274,6 +294,12 @@
         const distanceMeters = response.rows[0].elements[0].distance.value;
         const distanceKm = distanceMeters / 1000;
         let price = distanceKm * rate;
+
+	      // Apply discount if LT
+    		const discount = isDiscountedRoute(pickup, delivery);
+    		if (discount > 0) {
+      		price *= (1 - discount);
+    		}
 
         if (distanceKm < 100) price = Math.max(price, 250);
         else if (distanceKm >= 320 && distanceKm <= 420) price = Math.max(price, 350);
