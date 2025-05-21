@@ -175,54 +175,6 @@
   </script>
 	
 	<!--calculator-->
-	
-  <!--script>
-  const form = document.getElementById("shipping-form");
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const pickup = document.getElementById("pickup").value.trim();
-    const delivery = document.getElementById("delivery").value.trim();
-    const weight = parseFloat(document.getElementById("weight").value.trim());
-
-    if (!pickup || !delivery || isNaN(weight)) {
-      alert("Please fill in all fields correctly.");
-      return;
-    }
-
-    const service = new google.maps.DistanceMatrixService();
-    service.getDistanceMatrix(
-      {
-        origins: [pickup],
-        destinations: [delivery],
-        travelMode: "DRIVING",
-        unitSystem: google.maps.UnitSystem.METRIC,
-      },
-      function (response, status) {
-        if (status !== "OK") {
-          alert("Error: " + status);
-          return;
-        }
-
-        const distanceMeters = response.rows[0].elements[0].distance.value;
-        const distanceKm = distanceMeters / 1000;
-        let baseRate = 0.70;
-        let price = distanceKm * baseRate;
-
-        if (weight > 2000) price *= 1.1;
-        if (weight > 3000) price *= 1.2;
-        if (distanceKm < 100) price = Math.max(price, 250);
-        else if (distanceKm >= 320 && distanceKm <= 420) price = Math.max(price, 350);
-
-        const resultDiv = document.getElementById("calc-result");
-        resultDiv.innerHTML =
-          `Distance: ${distanceKm.toFixed(1)} km<br>Total Price: €${price.toFixed(2)}`;
-        resultDiv.scrollIntoView({ behavior: "smooth" });
-      }
-    );
-  });
-</script-->
 
 <script>
   const form = document.getElementById("shipping-form");
