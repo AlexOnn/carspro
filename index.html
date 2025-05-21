@@ -236,7 +236,7 @@
   // check the route for discount
   function isDiscountedRoute(pickup, delivery) {
     const rules = [
-      { from: "lithuania", "lietuvos", "lietuvа", "lietuva", to: "germany", "vokietija", "deutschland", discount: 0.3 }
+      { from: "lithuania", "lietuvos", "lietuvа", "lietuva" to: "germany", "vokietija", "deutschland" discount: 0.3 }
     ];
     const normalize = str => str.toLowerCase().trim();
 
