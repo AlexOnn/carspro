@@ -235,21 +235,31 @@
 	<script>
   // check the route for discount
   function isDiscountedRoute(pickup, delivery) {
-    const rules = [
-      { from: ["lithuania", "lietuvos", "lietuvа", "lietuva"], to: ["germany", "vokietija", "deutschland"], discount: 0.3 }
-    ];
-    const normalize = str => str.toLowerCase().trim();
-
-    for (const rule of rules) {
-      if (
-        normalize(pickup).includes(rule.from) &&
-        normalize(delivery).includes(rule.to)
-      ) {
-        return rule.discount;
-      }
+  const rules = [
+    {
+      from: ["lithuania", "lietuvos", "lietuvа", "lietuva"],
+      to: ["germany", "vokietija", "deutschland"],
+      discount: 0.3
     }
-    return 0;
+    // можно добавить другие направления
+  ];
+
+  const normalize = str => str.toLowerCase().trim();
+
+  for (const rule of rules) {
+    const pickupNorm = normalize(pickup);
+    const deliveryNorm = normalize(delivery);
+
+    const fromMatch = rule.from.some(from => pickupNorm.includes(from));
+    const toMatch = rule.to.some(to => deliveryNorm.includes(to));
+
+    if (fromMatch && toMatch) {
+      return rule.discount;
+    }
   }
+
+  return 0;
+}
 
   // Автозаполнение адресов
   function initAutocomplete() {
