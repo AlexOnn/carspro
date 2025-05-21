@@ -305,11 +305,12 @@
         if (distanceKm < 100) price = Math.max(price, 250);
         else if (distanceKm >= 320 && distanceKm <= 420) price = Math.max(price, 350);
 
+	let resultHtml = `Distance: ${distanceKm.toFixed(1)} km<br>Total Price: €${price.toFixed(2)}`;
+
 	if (discount > 0) {
-  		document.getElementById("calc-output").innerHTML +=
-    			`<div class="text-green-700 text-sm mt-2">
-       				A discount of ${Math.round(discount * 100)}% has been applied.
-     				</div>`;
+  	resultHtml += `<div class="text-green-700 text-sm mt-2">
+    	A discount of ${Math.round(discount * 100)}% has been applied.
+  		</div>`;
 	}
 
 	document.getElementById("calc-output").innerHTML = 
