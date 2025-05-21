@@ -79,6 +79,35 @@
     </form>
   </section>
 
+ <section id="shipping-calculator">
+ <div class="container">
+    <h2>Shipping Price Calculator</h2>
+    <label for="start">Starting Point:</label>
+    <input type="text" id="start" placeholder="Enter starting point">
+
+    <label for="destination">Destination:</label>
+    <input type="text" id="destination" placeholder="Enter destination">
+
+    <label for="vehicle">Select Vehicle:</label>
+    <select id="vehicle">
+        <option value="sedan">Sedan</option>
+        <option value="suv">SUV</option>
+        <option value="truck">Truck</option>
+        <option value="van">Van</option>
+        <option value="motorcycle">Motorcycle</option>
+        <option value="bus">Bus</option>
+    </select>
+
+    <div id="discount-container" style="display: none;">
+        <label for="discount">Apply Discount:</label>
+        <input type="checkbox" id="discount">
+    </div>
+
+    <button onclick="calculateDistance()">Calculate</button>
+
+    <div id="result" style="margin-top: 20px; font-weight: bold;"></div>
+ </div>	
+ </section>
   
   <section class="text-center py-10">
     <h2 class="text-2xl font-semibold mb-6">Shipping Calculator</h2>
