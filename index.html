@@ -313,8 +313,9 @@
   		</div>`;
 	}
 
-	document.getElementById("calc-output").innerHTML = 
-	  `Distance: ${distanceKm.toFixed(1)} km<br>Total Price: €${price.toFixed(2)}`;
+	//document.getElementById("calc-output").innerHTML =
+	  //`Distance: ${distanceKm.toFixed(1)} km<br>Total Price: €${price.toFixed(2)}`;
+        document.getElementById("calc-output").innerHTML = resultHtml;
         const resultDiv = document.getElementById("calc-result");
         resultDiv.classList.remove("hidden");
         resultDiv.scrollIntoView({ behavior: "smooth" });
