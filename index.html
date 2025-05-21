@@ -163,7 +163,7 @@
 	
 	<!--calculator-->
 	
-  <script>
+  <!--script>
   const form = document.getElementById("shipping-form");
 
   form.addEventListener("submit", function (e) {
@@ -209,6 +209,68 @@
       }
     );
   });
+</script-->
+
+<script>
+  const form = document.getElementById("shipping-form");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const pickup = document.getElementById("pickup").value.trim();
+    const delivery = document.getElementById("delivery").value.trim();
+    const vehicle = document.getElementById("vehicle").value;
+
+    if (!pickup || !delivery || !vehicle) {
+      alert("Please fill in all fields correctly.");
+      return;
+    }
+
+    const rates = {
+      sedan: 0.60,
+      suv: 0.65,
+      truck: 0.70,
+      van: 0.75,
+      motorcycle: 0.55,
+      bus: 0.80
+    };
+
+    const rate = rates[vehicle];
+    const service = new google.maps.DistanceMatrixService();
+    service.getDistanceMatrix(
+      {
+        origins: [pickup],
+        destinations: [delivery],
+        travelMode: "DRIVING",
+        unitSystem: google.maps.UnitSystem.METRIC,
+      },
+      function (response, status) {
+        if (status !== "OK") {
+          alert("Error: " + status);
+          return;
+        }
+
+        const distanceMeters = response.rows[0].elements[0].distance.value;
+        const distanceKm = distanceMeters / 1000;
+        let price = distanceKm * rate;
+
+        if (distanceKm < 100) price = Math.max(price, 250);
+        else if (distanceKm >= 320 && distanceKm <= 420) price = Math.max(price, 350);
+
+        const resultDiv = document.getElementById("calc-result");
+        resultDiv.innerHTML =
+          `Distance: ${distanceKm.toFixed(1)} km<br>Total Price: €${price.toFixed(2)}`;
+        resultDiv.scrollIntoView({ behavior: "smooth" });
+      }
+    );
+  });
+
+  // Автозаполнение адресов
+  function initAutocomplete() {
+    const options = { types: ["geocode"] };
+    new google.maps.places.Autocomplete(document.getElementById("pickup"), options);
+    new google.maps.places.Autocomplete(document.getElementById("delivery"), options);
+  }
 </script>
 
 <!-- Google Maps API -->
