@@ -82,12 +82,27 @@
 	<!--shipping calculator form-->
   <section class="text-center py-10">
   <h2 class="text-2xl font-semibold mb-6">Shipping Calculator</h2>
-  <form id="shipping-form" class="max-w-md mx-auto flex flex-col gap-4">
+  <!--<form id="shipping-form" class="max-w-md mx-auto flex flex-col gap-4">
      <input type="text" id="pickup" placeholder="Pickup location" class="border px-4 py-2" />
      <input type="text" id="delivery" placeholder="Delivery location" class="border px-4 py-2" />
      <input type="number" id="weight" placeholder="Vehicle weight (kg)" class="border px-4 py-2" />
      <button type="submit" class="bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Calculate</button>
-  </form>
+  </form-->
+  <form id="shipping-form" class="max-w-md mx-auto flex flex-col gap-4">
+  <input type="text" id="pickup" placeholder="Pickup location" class="border px-4 py-2" />
+  <input type="text" id="delivery" placeholder="Delivery location" class="border px-4 py-2" />
+
+  <select id="vehicle" class="border px-4 py-2">
+    <option value="sedan">Sedan</option>
+    <option value="suv">SUV</option>
+    <option value="truck">Truck</option>
+    <option value="van">Van</option>
+    <option value="motorcycle">Motorcycle</option>
+    <option value="bus">Bus</option>
+  </select>
+
+  <button type="submit" class="bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Calculate</button>
+  </form>  
 	<!--result-->
   <div id="calc-result" class="mt-6 text-lg font-medium text-gray-800"></div>
   </section>	  
