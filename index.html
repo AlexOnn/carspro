@@ -192,7 +192,7 @@
 
 	<!--calculator-->
 
-  <script>
+  <!--script>
   // check the route for discount
   function isDiscountedRoute(pickup, delivery) {
   const rules = [
@@ -298,10 +298,150 @@
       }
     );
   });
+</script-->
+
+<script>
+  // Centralized country name variations
+  const countrySynonyms = {
+    lithuania: ["lithuania", "lietuva", "litauen", "lituanie", "литва"],
+    germany: ["germany", "vokietija", "deutschland", "allemagne", "германия"],
+    belgium: ["belgium", "belgie", "belgique", "бельгия"],
+    netherlands: ["netherlands", "holland", "nederland", "нидерланды"]
+  };
+
+  // Check if input matches any synonym for a country
+  function matchesCountry(input, countryKey) {
+    const norm = input.toLowerCase();
+    return countrySynonyms[countryKey]?.some(syn => norm.includes(syn));
+  }
+
+  // Discount rule (e.g. LT → DE)
+  function isDiscountedRoute(pickup, delivery) {
+    if (matchesCountry(pickup, "lithuania") && matchesCountry(delivery, "germany")) {
+      return 0.3;
+    }
+    return 0;
+  }
+
+  // Max price rules based on routes
+  const maxPriceRules = [
+    {
+      from: "belgium",
+      to: "lithuania",
+      prices: { sedan: 650, suv: 700 }
+    },
+    {
+      from: "netherlands",
+      to: "lithuania",
+      prices: { sedan: 650, suv: 700 }
+    }
+  ];
+
+  function applyMaxPriceRules(pickup, delivery, vehicle, currentPrice) {
+    for (const rule of maxPriceRules) {
+      const fromMatch = matchesCountry(pickup, rule.from);
+      const toMatch = matchesCountry(delivery, rule.to);
+
+      if (fromMatch && toMatch) {
+        const max = rule.prices[vehicle];
+        if (max && currentPrice > max) {
+          return max;
+        }
+      }
+    }
+    return currentPrice;
+  }
+
+  // Google Places Autocomplete
+  function initAutocomplete() {
+    const options = { types: ["geocode"] };
+    new google.maps.places.Autocomplete(document.getElementById("pickup"), options);
+    new google.maps.places.Autocomplete(document.getElementById("delivery"), options);
+  }
+
+  // Main calculator logic
+  const form = document.getElementById("shipping-form");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const pickup = document.getElementById("pickup").value.trim();
+    const delivery = document.getElementById("delivery").value.trim();
+    const vehicle = document.getElementById("vehicle").value;
+
+    if (!pickup || !delivery || !vehicle) {
+      alert("Please fill in all fields correctly.");
+      return;
+    }
+
+    const rates = {
+      sedan: 0.60,
+      suv: 0.65,
+      truck: 0.70,
+      van: 0.75,
+      motorcycle: 0.55,
+      bus: 0.80
+    };
+
+    const rate = rates[vehicle];
+    const service = new google.maps.DistanceMatrixService();
+
+    service.getDistanceMatrix(
+      {
+        origins: [pickup],
+        destinations: [delivery],
+        travelMode: "DRIVING",
+        unitSystem: google.maps.UnitSystem.METRIC,
+      },
+      function (response, status) {
+        if (status !== "OK") {
+          alert("Error: " + status);
+          return;
+        }
+
+        const distanceMeters = response.rows[0].elements[0].distance.value;
+        const distanceKm = distanceMeters / 1000;
+
+        let basePrice = distanceKm * rate;
+        let price = basePrice;
+
+        // Apply minimum price rules
+        if (distanceKm < 100) price = Math.max(price, 250);
+        else if (distanceKm >= 320 && distanceKm <= 420) price = Math.max(price, 350);
+
+        // Apply route-based discount
+        const discount = isDiscountedRoute(pickup, delivery);
+        if (discount > 0) {
+          price *= (1 - discount);
+        }
+
+        // Apply max price limits
+        price = applyMaxPriceRules(pickup, delivery, vehicle, price);
+
+        // Render result
+        let resultHtml = `Distance: ${distanceKm.toFixed(1)} km<br>Total Price: €${price.toFixed(2)}`;
+
+        if (discount > 0) {
+          resultHtml += `<div class="text-green-700 text-sm mt-2">
+            A discount of ${Math.round(discount * 100)}% has been applied.
+          </div>`;
+        }
+
+        document.getElementById("calc-output").innerHTML = resultHtml;
+        const resultDiv = document.getElementById("calc-result");
+        resultDiv.classList.remove("hidden");
+        resultDiv.scrollIntoView({ behavior: "smooth" });
+      }
+    );
+  });
 </script>
 
 <!-- Google Maps API -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1Fb-dIQpieKC0rZDNwkJZdMIjYZOHuuE&libraries=places&callback=initAutocomplete" async defer></script>
+
+
+<!-- Google Maps API -->
+<!--script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1Fb-dIQpieKC0rZDNwkJZdMIjYZOHuuE&libraries=places&callback=initAutocomplete" async defer></script-->
 
 <!-- Google Maps API -->
 <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1Fb-dIQpieKC0rZDNwkJZdMIjYZOHuuE&libraries=places&callback=initAutocomplete" async defer></script>-->
