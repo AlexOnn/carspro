@@ -54,35 +54,48 @@
 <p class="text-sm text-gray-600 mb-2">Learn how brokers simplify bidding, reduce risks, and ensure safe car delivery from auctions like BCA, Copart, and Auto1.</p>
 <a class="text-blue-600 text-sm underline" href="/blog/auction-broker-guide.html">Read more</a>
 </div>
+    
 <!-- Car Carrier Map Block -->
-<div class="border p-4 rounded shadow overflow-hidden bg-gray-50 col-span-2">
-<h3 class="font-semibold text-lg mb-4 flex items-center gap-2">
-<img alt="Truck icon" class="h-5 inline-block" src="/images/avtovoz-emoji.png"/> Car Carriers in Transit
-  </h3>
-<div class="relative h-52 w-full">
-<!-- ROUTE 1: Berlin → Vilnius -->
-<svg class="absolute w-full h-28 top-2 left-0" viewbox="0 0 500 100">
-<path d="M 0 70 Q 250 0 500 70" fill="none" stroke="#888" stroke-dasharray="6 6" stroke-width="2"></path>
-</svg>
-<img alt="Carrier 1" class="absolute top-6 left-0 h-6 animate-[drive1_10s_linear_infinite] filter brightness-110 flip-horizontal" src="/images/avtovoz-emoji.png"/>
-<div class="absolute left-2 top-[100px] text-xs">🇩🇪 Berlin</div>
-<div class="absolute right-2 top-[100px] text-xs">🇱🇹 Vilnius</div>
-<!-- ROUTE 2: Amsterdam → Warsaw -->
-<svg class="absolute w-full h-28 top-16 left-0" viewbox="0 0 500 100">
-<path d="M 0 70 Q 250 20 500 70" fill="none" stroke="#555" stroke-dasharray="6 6" stroke-width="2"></path>
-</svg>
-<img alt="Carrier 2" class="absolute top-[120px] left-0 h-6 animate-[drive2_12s_linear_infinite] filter hue-rotate-90 flip-horizontal" src="/images/avtovoz-emoji.png"/>
-<div class="absolute left-2 top-[152px] text-xs">🇳🇱 Amsterdam</div>
-<div class="absolute right-2 top-[152px] text-xs">🇵🇱 Warsaw</div>
-<!-- ROUTE 3: Paris → Prague -->
-<svg class="absolute w-full h-28 top-28 left-0" viewbox="0 0 500 100">
-<path d="M 0 70 Q 250 30 500 70" fill="none" stroke="#444" stroke-dasharray="6 6" stroke-width="2"></path>
-</svg>
-<img alt="Carrier 3" class="absolute top-[164px] left-0 h-6 animate-[drive3_14s_linear_infinite] filter hue-rotate-180 flip-horizontal" src="/images/avtovoz-emoji.png"/>
-<div class="absolute left-2 top-[196px] text-xs">🇫🇷 Paris</div>
-<div class="absolute right-2 top-[196px] text-xs">🇨🇿 Prague</div>
-</div>
-</div>
+
+    <!-- Version: CarRoutes v1.7 – cursor-pointer + hover effect added -->
+<a href="https://carspro.lt/#shipping-form"
+   class="block col-span-2 cursor-pointer hover:shadow-lg transition-opacity"
+   aria-label="Calculate car shipping cost">
+  <div class="border p-4 rounded shadow overflow-hidden bg-gray-50">
+    <h3 class="font-semibold text-lg mb-4 flex items-center gap-2">
+      <img src="/images/avtovoz-emoji.png" alt="Truck icon" class="h-5 inline-block">
+      Car Carriers in Transit
+    </h3>
+    <div class="relative h-52 w-full">
+
+      <!-- Route 1: Berlin to Vilnius -->
+      <svg viewBox="0 0 500 100" class="absolute w-full h-28 top-2 left-0">
+        <path d="M 0 70 Q 250 0 500 70" stroke="#888" stroke-dasharray="6 6" stroke-width="2" fill="none"/>
+      </svg>
+      <img src="/images/avtovoz-emoji.png" alt="Berlin to Vilnius" class="absolute top-6 left-0 h-6 animate-[drive1_10s_linear_infinite] filter brightness-110 flip-horizontal">
+      <div class="absolute left-2 top-[100px] text-xs">🇩🇪 Berlin</div>
+      <div class="absolute right-2 top-[100px] text-xs">🇱🇹 Vilnius</div>
+
+      <!-- Route 2: Amsterdam to Warsaw -->
+      <svg viewBox="0 0 500 100" class="absolute w-full h-28 top-16 left-0">
+        <path d="M 0 70 Q 250 20 500 70" stroke="#555" stroke-dasharray="6 6" stroke-width="2" fill="none"/>
+      </svg>
+      <img src="/images/avtovoz-emoji.png" alt="Amsterdam to Warsaw" class="absolute top-[120px] left-0 h-6 animate-[drive2_12s_linear_infinite] filter hue-rotate-90 flip-horizontal">
+      <div class="absolute left-2 top-[152px] text-xs">🇳🇱 Amsterdam</div>
+      <div class="absolute right-2 top-[152px] text-xs">🇵🇱 Warsaw</div>
+
+      <!-- Route 3: Paris to Prague -->
+      <svg viewBox="0 0 500 100" class="absolute w-full h-28 top-28 left-0">
+        <path d="M 0 70 Q 250 30 500 70" stroke="#444" stroke-dasharray="6 6" stroke-width="2" fill="none"/>
+      </svg>
+      <img src="/images/avtovoz-emoji.png" alt="Paris to Prague" class="absolute top-[164px] left-0 h-6 animate-[drive3_14s_linear_infinite] filter hue-rotate-180 flip-horizontal">
+      <div class="absolute left-2 top-[196px] text-xs">🇫🇷 Paris</div>
+      <div class="absolute right-2 top-[196px] text-xs">🇨🇿 Prague</div>
+
+    </div>
+  </div>
+</a>
+
 <style>
 @keyframes drive1 {
   0% { transform: translateX(0) scaleX(-1); }
@@ -100,8 +113,10 @@
   transform: scaleX(-1);
 }
 </style>
+
 </div>
 </div>
+
 </section>
 <!-- Blog Post Grid -->
 <main class="max-w-6xl mx-auto py-10 px-4">
