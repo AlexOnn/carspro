@@ -63,53 +63,56 @@
   <h3 class="font-semibold text-lg mb-4 flex items-center gap-2">
     <img src="/images/avtovoz-emoji.png" alt="Truck icon" class="h-5 inline-block"> Car Carriers in Transit
   </h3>
-  <div class="relative h-44 w-full">
+  <div class="relative h-52 w-full">
     
-    <!-- ROUTE 1 -->
+    <!-- ROUTE 1: Berlin → Vilnius -->
     <svg viewBox="0 0 500 100" class="absolute w-full h-28 top-2 left-0">
       <path d="M 0 70 Q 250 0 500 70" stroke="#888" stroke-dasharray="6 6" stroke-width="2" fill="none"/>
     </svg>
     <img src="/images/avtovoz-emoji.png"
          alt="Carrier 1"
-         class="absolute top-6 left-0 h-6 animate-[drive1_10s_linear_infinite] filter brightness-110">
-    <div class="absolute left-2 top-20 text-xs">🇩🇪 Berlin</div>
-    <div class="absolute right-2 top-20 text-xs">🇱🇹 Vilnius</div>
+         class="absolute top-6 left-0 h-6 animate-[drive1_10s_linear_infinite] filter brightness-110 flip-horizontal">
+    <div class="absolute left-2 top-[100px] text-xs">🇩🇪 Berlin</div>
+    <div class="absolute right-2 top-[100px] text-xs">🇱🇹 Vilnius</div>
 
-    <!-- ROUTE 2 -->
+    <!-- ROUTE 2: Amsterdam → Warsaw -->
     <svg viewBox="0 0 500 100" class="absolute w-full h-28 top-16 left-0">
       <path d="M 0 70 Q 250 20 500 70" stroke="#555" stroke-dasharray="6 6" stroke-width="2" fill="none"/>
     </svg>
     <img src="/images/avtovoz-emoji.png"
          alt="Carrier 2"
-         class="absolute top-20 left-0 h-6 animate-[drive2_12s_linear_infinite] filter hue-rotate-90">
-    <div class="absolute left-2 top-32 text-xs">🇳🇱 Amsterdam</div>
-    <div class="absolute right-2 top-32 text-xs">🇵🇱 Warsaw</div>
+         class="absolute top-[120px] left-0 h-6 animate-[drive2_12s_linear_infinite] filter hue-rotate-90 flip-horizontal">
+    <div class="absolute left-2 top-[152px] text-xs">🇳🇱 Amsterdam</div>
+    <div class="absolute right-2 top-[152px] text-xs">🇵🇱 Warsaw</div>
 
-    <!-- ROUTE 3 -->
+    <!-- ROUTE 3: Paris → Prague -->
     <svg viewBox="0 0 500 100" class="absolute w-full h-28 top-28 left-0">
       <path d="M 0 70 Q 250 30 500 70" stroke="#444" stroke-dasharray="6 6" stroke-width="2" fill="none"/>
     </svg>
     <img src="/images/avtovoz-emoji.png"
          alt="Carrier 3"
-         class="absolute top-32 left-0 h-6 animate-[drive3_14s_linear_infinite] filter hue-rotate-180">
-    <div class="absolute left-2 top-44 text-xs">🇫🇷 Paris</div>
-    <div class="absolute right-2 top-44 text-xs">🇨🇿 Prague</div>
+         class="absolute top-[164px] left-0 h-6 animate-[drive3_14s_linear_infinite] filter hue-rotate-180 flip-horizontal">
+    <div class="absolute left-2 top-[196px] text-xs">🇫🇷 Paris</div>
+    <div class="absolute right-2 top-[196px] text-xs">🇨🇿 Prague</div>
 
   </div>
 </div>
 
 <style>
 @keyframes drive1 {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(500px); }
+  0% { transform: translateX(0) scaleX(-1); }
+  100% { transform: translateX(500px) scaleX(-1); }
 }
 @keyframes drive2 {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(500px); }
+  0% { transform: translateX(0) scaleX(-1); }
+  100% { transform: translateX(500px) scaleX(-1); }
 }
 @keyframes drive3 {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(500px); }
+  0% { transform: translateX(0) scaleX(-1); }
+  100% { transform: translateX(500px) scaleX(-1); }
+}
+.flip-horizontal {
+  transform: scaleX(-1);
 }
 </style>
      
