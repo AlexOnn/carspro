@@ -57,6 +57,28 @@
           <p class="text-sm text-gray-600 mb-2">Learn how brokers simplify bidding, reduce risks, and ensure safe car delivery from auctions like BCA, Copart, and Auto1.</p>
           <a href="/blog/auction-broker-guide.html" class="text-blue-600 text-sm underline">Read more</a>
         </div>
+        <!-- Moving Truck Animation Block -->
+<div class="relative border p-4 rounded shadow overflow-hidden bg-gray-50">
+  <h3 class="font-semibold text-lg mb-2">🔄 Автовоз в пути</h3>
+  <div class="relative h-28 w-full">
+    <!-- SVG дорога -->
+    <svg viewBox="0 0 400 100" class="absolute top-0 left-0 w-full h-full">
+      <path d="M 0 50 Q 200 0 400 50" stroke="#999" stroke-width="4" fill="none" stroke-dasharray="6 6"/>
+    </svg>
+
+    <!-- Изображение автовоза -->
+    <img src="/images/avtovoz-emoji.png" alt="Avtovoz" 
+         class="absolute top-1 left-0 h-8 animate-[driveTruck_8s_linear_infinite]">
+  </div>
+</div>
+
+<style>
+@keyframes driveTruck {
+  0%   { transform: translateX(0) translateY(0); }
+  50%  { transform: translateX(200px) translateY(-25px); }
+  100% { transform: translateX(400px) translateY(0); }
+}
+</style>
       </div>
     </div>
   </section>
