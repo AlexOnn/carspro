@@ -57,30 +57,62 @@
           <p class="text-sm text-gray-600 mb-2">Learn how brokers simplify bidding, reduce risks, and ensure safe car delivery from auctions like BCA, Copart, and Auto1.</p>
           <a href="/blog/auction-broker-guide.html" class="text-blue-600 text-sm underline">Read more</a>
         </div>
-        <!-- Moving Truck Animation Block -->
-<div class="relative border p-4 rounded shadow overflow-hidden bg-gray-50">
-  <h3 class="font-semibold text-lg mb-2">🔄 Автовоз в пути</h3>
-  <div class="relative h-28 w-full">
-    <!-- SVG дорога -->
-    <svg viewBox="0 0 400 100" class="absolute top-0 left-0 w-full h-full">
-      <path d="M 0 50 Q 200 0 400 50" stroke="#999" stroke-width="4" fill="none" stroke-dasharray="6 6"/>
+    
+<!-- Car Carrier Map Block -->
+<div class="border p-4 rounded shadow overflow-hidden bg-gray-50 col-span-2">
+  <h3 class="font-semibold text-lg mb-4 flex items-center gap-2">
+    <img src="/images/avtovoz-emoji.png" alt="Truck icon" class="h-5 inline-block"> Car Carriers in Transit
+  </h3>
+  <div class="relative h-44 w-full">
+    
+    <!-- ROUTE 1 -->
+    <svg viewBox="0 0 500 100" class="absolute w-full h-28 top-2 left-0">
+      <path d="M 0 70 Q 250 0 500 70" stroke="#888" stroke-dasharray="6 6" stroke-width="2" fill="none"/>
     </svg>
+    <img src="/images/avtovoz-emoji.png"
+         alt="Carrier 1"
+         class="absolute top-6 left-0 h-6 animate-[drive1_10s_linear_infinite] filter brightness-110">
+    <div class="absolute left-2 top-20 text-xs">🇩🇪 Berlin</div>
+    <div class="absolute right-2 top-20 text-xs">🇱🇹 Vilnius</div>
 
-    <!-- Изображение автовоза -->
-    <img src="/images/avtovoz-emoji.png" alt="Avtovoz" 
-         class="absolute top-1 left-0 h-8 animate-[driveTruck_8s_linear_infinite]">
+    <!-- ROUTE 2 -->
+    <svg viewBox="0 0 500 100" class="absolute w-full h-28 top-16 left-0">
+      <path d="M 0 70 Q 250 20 500 70" stroke="#555" stroke-dasharray="6 6" stroke-width="2" fill="none"/>
+    </svg>
+    <img src="/images/avtovoz-emoji.png"
+         alt="Carrier 2"
+         class="absolute top-20 left-0 h-6 animate-[drive2_12s_linear_infinite] filter hue-rotate-90">
+    <div class="absolute left-2 top-32 text-xs">🇳🇱 Amsterdam</div>
+    <div class="absolute right-2 top-32 text-xs">🇵🇱 Warsaw</div>
+
+    <!-- ROUTE 3 -->
+    <svg viewBox="0 0 500 100" class="absolute w-full h-28 top-28 left-0">
+      <path d="M 0 70 Q 250 30 500 70" stroke="#444" stroke-dasharray="6 6" stroke-width="2" fill="none"/>
+    </svg>
+    <img src="/images/avtovoz-emoji.png"
+         alt="Carrier 3"
+         class="absolute top-32 left-0 h-6 animate-[drive3_14s_linear_infinite] filter hue-rotate-180">
+    <div class="absolute left-2 top-44 text-xs">🇫🇷 Paris</div>
+    <div class="absolute right-2 top-44 text-xs">🇨🇿 Prague</div>
+
   </div>
 </div>
 
 <style>
-@keyframes driveTruck {
-  0%   { transform: translateX(0) translateY(0); }
-  50%  { transform: translateX(200px) translateY(-25px); }
-  100% { transform: translateX(400px) translateY(0); }
+@keyframes drive1 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(500px); }
+}
+@keyframes drive2 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(500px); }
+}
+@keyframes drive3 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(500px); }
 }
 </style>
-      </div>
-    </div>
+     
   </section>
 
   <!-- Blog Post Grid -->
