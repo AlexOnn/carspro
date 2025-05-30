@@ -192,118 +192,8 @@
     }, 5000);
   }
   </script>
-
-	<!--calculator-->
-
-  <!--script>
-  // check the route for discount
-  function isDiscountedRoute(pickup, delivery) {
-  const rules = [
-    {
-      from: ["lithuania", "lietuvos", "lietuvа", "lietuva"],
-      to: ["germany", "vokietija", "deutschland"],
-      discount: 0.3
-    }
-    // you can add other directions
-  ];
-
-  const normalize = str => str.toLowerCase().trim();
-
-  for (const rule of rules) {
-    const pickupNorm = normalize(pickup);
-    const deliveryNorm = normalize(delivery);
-
-    const fromMatch = rule.from.some(from => pickupNorm.includes(from));
-    const toMatch = rule.to.some(to => deliveryNorm.includes(to));
-
-    if (fromMatch && toMatch) {
-      return rule.discount;
-    }
-  }
-
-  return 0;
-}
-
-  // autofills of the addresses
-  function initAutocomplete() {
-    const options = { types: ["geocode"] };
-    new google.maps.places.Autocomplete(document.getElementById("pickup"), options);
-    new google.maps.places.Autocomplete(document.getElementById("delivery"), options);
-  }
-
-  const form = document.getElementById("shipping-form");
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const pickup = document.getElementById("pickup").value.trim();
-    const delivery = document.getElementById("delivery").value.trim();
-    const vehicle = document.getElementById("vehicle").value;
-
-    if (!pickup || !delivery || !vehicle) {
-      alert("Please fill in all fields correctly.");
-      return;
-    }
-
-    const rates = {
-      sedan: 0.60,
-      suv: 0.65,
-      truck: 0.70,
-      van: 0.75,
-      motorcycle: 0.55,
-      bus: 0.80
-    };
-
-    const rate = rates[vehicle];
-    const service = new google.maps.DistanceMatrixService();
-
-    service.getDistanceMatrix(
-      {
-        origins: [pickup],
-        destinations: [delivery],
-        travelMode: "DRIVING",
-        unitSystem: google.maps.UnitSystem.METRIC,
-      },
-      function (response, status) {
-        if (status !== "OK") {
-          alert("Error: " + status);
-          return;
-        }
-
-        const distanceMeters = response.rows[0].elements[0].distance.value;
-        const distanceKm = distanceMeters / 1000;
-
-        let basePrice = distanceKm * rate;
-        let price = basePrice;
-
-        // the minimum price application
-        if (distanceKm < 100) price = Math.max(price, 250);
-        else if (distanceKm >= 320 && distanceKm <= 420) price = Math.max(price, 350);
-
-        // Application of the discount
-        const discount = isDiscountedRoute(pickup, delivery);
-        if (discount > 0) {
-          price *= (1 - discount);
-        }
-
-        // Result printing
-        let resultHtml = `Distance: ${distanceKm.toFixed(1)} km<br>Total Price: €${price.toFixed(2)}`;
-        if (discount > 0) {
-          resultHtml += `<div class="text-green-700 text-sm mt-2">
-            A discount of ${Math.round(discount * 100)}% has been applied.
-          </div>`;
-        }
-
-        document.getElementById("calc-output").innerHTML = resultHtml;
-        const resultDiv = document.getElementById("calc-result");
-        resultDiv.classList.remove("hidden");
-        resultDiv.scrollIntoView({ behavior: "smooth" });
-      }
-    );
-  });
-</script-->
-
-<script>
+<!--calculator-->
+  <script>
   // Centralized country name variations
   const countrySynonyms = {
     lithuania: ["lithuania", "lietuva", "litauen", "lituanie", "литва"],
@@ -441,13 +331,5 @@
 
 <!-- Google Maps API -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1Fb-dIQpieKC0rZDNwkJZdMIjYZOHuuE&libraries=places&callback=initAutocomplete" async defer></script>
-
-
-<!-- Google Maps API -->
-<!--script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1Fb-dIQpieKC0rZDNwkJZdMIjYZOHuuE&libraries=places&callback=initAutocomplete" async defer></script-->
-
-<!-- Google Maps API -->
-<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1Fb-dIQpieKC0rZDNwkJZdMIjYZOHuuE&libraries=places&callback=initAutocomplete" async defer></script>-->
-<!--script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1Fb-dIQpieKC0rZDNwkJZdMIjYZOHuuE&libraries=places"></script-->
 </body>
 </html>
