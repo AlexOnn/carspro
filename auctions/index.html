@@ -19,6 +19,8 @@
     <div class="max-w-6xl mx-auto flex justify-between items-center">
       <img src="../carspro-logo.png" alt="CarsPro Logo" class="h-32">
       <div>
+        <a href="../index.html" class="text-sm mr-4 text-blue-600 hover:underline">Home</a>
+        <a href="../blog/index.html" class="text-sm mr-4 text-blue-600 hover:underline">Blog</a>
         <button onclick="setLanguage('lt')" class="border px-3 py-1 text-sm mr-2">LT</button>
         <button onclick="setLanguage('en')" class="border px-3 py-1 text-sm">EN</button>
       </div>
@@ -69,16 +71,27 @@
           <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Send Request</button>
         </form>
       </div>
-      <div class="mt-10 text-center text-sm text-gray-500">
-        <p class="mb-2">We work with major European auction platforms, including:</p>
-        <ul class="inline-flex flex-wrap justify-center gap-4 text-gray-600">
-          <li>BCA Europe</li>
-          <li>Auto1</li>
-          <li>Copart</li>
-          <li>Openlane (formerly ADESA / CarsOnTheWeb)</li>
-        </ul>
-        <p class="mt-2">Just send the vehicle listing URL — we'll take care of the rest.</p>
+
+      <div class="mt-10 grid md:grid-cols-2 gap-6 text-sm text-gray-700">
+        <div class="border rounded shadow p-4">
+          <h3 class="text-lg font-semibold mb-1">BCA Europe</h3>
+          <p>Commission from €250. Wide selection of cars across Europe. VIN reports and inspection available.</p>
+        </div>
+        <div class="border rounded shadow p-4">
+          <h3 class="text-lg font-semibold mb-1">Auto1</h3>
+          <p>Commission from €250. Fast turnover, ideal for verified dealers. Local and cross-border listings.</p>
+        </div>
+        <div class="border rounded shadow p-4">
+          <h3 class="text-lg font-semibold mb-1">Copart</h3>
+          <p>Commission from €250. Salvage and damaged vehicles. Important to check repair viability.</p>
+        </div>
+        <div class="border rounded shadow p-4">
+          <h3 class="text-lg font-semibold mb-1">Openlane (formerly ADESA)</h3>
+          <p>Commission from €250. Dealer-to-dealer transactions. Well-documented auction terms.</p>
+        </div>
       </div>
+
+      <p class="mt-6 text-center text-sm text-gray-500">Just send the vehicle listing URL — we'll take care of the rest.</p>
     </section>
   </main>
 
