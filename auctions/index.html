@@ -20,13 +20,13 @@
       <img src="../carspro-logo.png" alt="CarsPro Logo" class="h-32">
 
       <div class="flex items-center space-x-6">
-        <!-- Навигация -->
+        <!-- navigation -->
         <nav class="hidden md:flex space-x-4 text-sm">
           <a href="../index.html" class="text-gray-700 hover:text-blue-600">Home</a>
           <a href="../blog/index.html" class="text-gray-700 hover:text-blue-600">Blog</a>
         </nav>
 
-        <!-- Языки -->
+        <!-- EN LT -->
         <div>
           <button onclick="setLanguage('lt')" class="border px-3 py-1 text-sm mr-2">LT</button>
           <button onclick="setLanguage('en')" class="border px-3 py-1 text-sm">EN</button>
@@ -47,7 +47,38 @@
   </header>
 
   <main class="max-w-6xl mx-auto px-4 py-10">
-    <!-- 1. Visual Intro Section -->
+<!-- 1. Visual Timeline Explanation Section -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-center mb-10">How Our Auction Service Works</h2>
+      <div class="relative border-l-2 border-blue-500 ml-4">
+        <div class="mb-10 ml-6">
+          <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-2.5 top-1"></div>
+          <h3 class="font-semibold text-lg">Step 1: Find a Car Listing</h3>
+          <p class="text-gray-600">You explore auction sites like BCA, Auto1, or Copart and find a car you're interested in.</p>
+        </div>
+        <div class="mb-10 ml-6">
+          <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-2.5 top-24"></div>
+          <h3 class="font-semibold text-lg">Step 2: Send Us the Link</h3>
+          <p class="text-gray-600">Submit the auction listing URL to us via the form below.</p>
+        </div>
+        <div class="mb-10 ml-6">
+          <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-2.5 top-48"></div>
+          <h3 class="font-semibold text-lg">Step 3: Evaluation & Pricing</h3>
+          <p class="text-gray-600">We verify the listing, check the vehicle condition, estimate total costs (incl. transport), and get back to you.</p>
+        </div>
+        <div class="mb-10 ml-6">
+          <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-2.5 top-[300px]"></div>
+          <h3 class="font-semibold text-lg">Step 4: Order Confirmation</h3>
+          <p class="text-gray-600">Once you approve, we proceed with purchasing and arrange delivery.</p>
+        </div>
+        <div class="ml-6">
+          <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-2.5 top-[380px]"></div>
+          <h3 class="font-semibold text-lg">Step 5: Delivery & Documents</h3>
+          <p class="text-gray-600">Your car arrives at your location with all the required documents for registration.</p>
+        </div>
+      </div>
+    </section>
+    
     <section class="mb-12">
       <img src="../images/auction-process-infographic.webp" alt="How auction broker works" class="rounded shadow w-full max-w-4xl mx-auto">
       <p class="text-center text-sm text-gray-500 mt-2">How the auction request and delivery process works step by step.</p>
