@@ -14,10 +14,14 @@
     h1, h2, .btn {
       font-family: 'Montserrat', sans-serif;
     }
-    .mobile-menu { display: none; }
+    .mobile-nav-toggle {
+      display: none;
+    }
     @media (max-width: 768px) {
       .desktop-menu { display: none; }
-      .mobile-menu { display: block; }
+      .mobile-nav-toggle { display: inline-block; }
+      .mobile-menu { display: none; flex-direction: column; margin-top: 1rem; }
+      .mobile-menu.show { display: flex; }
     }
   </style>
 </head>
@@ -33,6 +37,11 @@
           <a href="../blog/index.html" class="text-gray-700 hover:text-blue-600">Blog</a>
         </nav>
 
+        <!-- Mobile toggle -->
+        <button class="mobile-nav-toggle md:hidden border px-3 py-1 text-sm" onclick="document.getElementById('mobileMenu').classList.toggle('show')">
+          Menu
+        </button>
+
         <!-- EN LT -->
         <div>
           <button onclick="setLanguage('lt')" class="border px-3 py-1 text-sm mr-2">LT</button>
@@ -42,7 +51,7 @@
     </div>
 
     <!-- Mobile menu links -->
-    <div class="mobile-menu text-center mt-4">
+    <div id="mobileMenu" class="mobile-menu text-center">
       <a href="../index.html" class="text-gray-700 hover:text-blue-600 block">Home</a>
       <a href="../blog/index.html" class="text-gray-700 hover:text-blue-600 block">Blog</a>
     </div>
@@ -58,7 +67,6 @@
       </p>
     </div>
   </header>
-
   <main class="max-w-6xl mx-auto px-4 py-10">
 <!-- 1. Visual Timeline Explanation Section -->
     <section class="mb-16">
