@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
- <head>
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Buy Cars from European Auctions – CarsPro Broker</title>
@@ -14,46 +13,35 @@
     h1, h2, .btn {
       font-family: 'Montserrat', sans-serif;
     }
-    .mobile-nav-toggle {
-      display: none;
-    }
-    @media (max-width: 768px) {
-      .desktop-menu { display: none; }
-      .mobile-nav-toggle { display: inline-block; }
-      .mobile-menu { display: none; flex-direction: column; margin-top: 1rem; }
-      .mobile-menu.show { display: flex; }
-    }
   </style>
 </head>
 <body class="bg-white text-gray-800">
   <header class="bg-white shadow p-4">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <img src="../carspro-logo.png" alt="CarsPro Logo" class="h-32">
+      <img src="../carspro-logo.png" alt="CarsPro Logo" class="h-20">
 
-      <div class="flex items-center space-x-6">
-        <!-- navigation -->
-        <nav class="hidden md:flex space-x-4 text-sm desktop-menu">
-          <a href="../index.html" class="text-gray-700 hover:text-blue-600">Home</a>
-          <a href="../blog/index.html" class="text-gray-700 hover:text-blue-600">Blog</a>
-        </nav>
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-gray-800 text-2xl focus:outline-none">☰</button>
+      </div>
 
-        <!-- Mobile toggle -->
-        <button class="mobile-nav-toggle md:hidden border px-3 py-1 text-sm" onclick="document.getElementById('mobileMenu').classList.toggle('show')">
-          Menu
-        </button>
+      <nav class="hidden md:flex space-x-4 text-sm">
+        <a href="../index.html" class="text-gray-700 hover:text-blue-600">Home</a>
+        <a href="../blog/index.html" class="text-gray-700 hover:text-blue-600">Blog</a>
+      </nav>
 
-        <!-- EN LT -->
-        <div>
-          <button onclick="setLanguage('lt')" class="border px-3 py-1 text-sm mr-2">LT</button>
-          <button onclick="setLanguage('en')" class="border px-3 py-1 text-sm">EN</button>
-        </div>
+      <div class="hidden md:flex items-center ml-6">
+        <button onclick="setLanguage('lt')" class="border px-3 py-1 text-sm mr-2">LT</button>
+        <button onclick="setLanguage('en')" class="border px-3 py-1 text-sm">EN</button>
       </div>
     </div>
 
-    <!-- Mobile menu links -->
-    <div id="mobileMenu" class="mobile-menu text-center">
-      <a href="../index.html" class="text-gray-700 hover:text-blue-600 block">Home</a>
-      <a href="../blog/index.html" class="text-gray-700 hover:text-blue-600 block">Blog</a>
+    <div id="mobile-menu" class="hidden md:hidden text-center mt-4 space-y-2">
+      <a href="../index.html" class="block text-gray-700 hover:text-blue-600">Home</a>
+      <a href="../blog/index.html" class="block text-gray-700 hover:text-blue-600">Blog</a>
+      <div>
+        <button onclick="setLanguage('lt')" class="border px-3 py-1 text-sm mr-2">LT</button>
+        <button onclick="setLanguage('en')" class="border px-3 py-1 text-sm">EN</button>
+      </div>
     </div>
 
     <div class="text-center mt-6">
