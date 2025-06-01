@@ -19,31 +19,37 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://carspro.lt/blog/auction-broker-guide.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://carspro.lt/blog/auction-platforms.html</loc>
+    <lastmod>2025-05-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://carspro.lt/blog/eu-vat-refund.html</loc>
     <lastmod>2025-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://carspro.lt/blog/import-germany-lithuania.html</loc>
+    <loc>https://carspro.lt/blog/import-car-germany.html</loc>
     <lastmod>2025-05-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://carspro.lt/blog/transport-options-baltics.html</loc>
+    <loc>https://carspro.lt/blog/logistics-options.html</loc>
     <lastmod>2025-05-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://carspro.lt/blog/eu-phone-driving-penalties.html</loc>
-    <lastmod>2025-05-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://carspro.lt/blog/buying-car-abroad-mistakes.html</loc>
+    <loc>https://carspro.lt/blog/penalties-using-phone.html</loc>
     <lastmod>2025-05-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
