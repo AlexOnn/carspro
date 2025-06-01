@@ -4,63 +4,81 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CarsPro — Automotive Logistics in Europe</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <meta name="description" content="Car logistics and brokerage across Europe. Fast delivery and automatic quotation. Delivery from Germany, Benelux, France, Italy, Latvia to Baltics and Poland.">
+  <meta name="keywords" content="car logistics, auto transport Europe, vehicle delivery EU, car shipping Germany Lithuania, CarsPro broker, EU vehicle logistics">
   <meta name="robots" content="index, follow">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="canonical" href="https://carspro.lt/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CarsPro — Automotive Logistics in Europe">
+  <meta property="og:description" content="We provide reliable car logistics, brokerage, and delivery from European countries to the Baltics.">
+  <meta property="og:url" content="https://carspro.lt/">
+  <meta property="og:image" content="https://carspro.lt/images/og-default.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CarsPro — Automotive Logistics in Europe">
+  <meta name="twitter:description" content="Fast car shipping and logistics solutions across Europe.">
+  <meta name="twitter:image" content="https://carspro.lt/images/og-default.jpg">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     h1, .btn {
       font-family: 'Montserrat', sans-serif;
     }
+    .animate-gradient {
+      background-size: 200% auto;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientMove 3s ease infinite;
+    }
+    @keyframes gradientMove {
+      0% { background-position: 0% center; }
+      50% { background-position: 100% center; }
+      100% { background-position: 0% center; }
+    }
   </style>
 </head>
-
 <body class="bg-white text-gray-800 font-sans">
-
-<header class="bg-white shadow p-4">
-  <div class="max-w-6xl mx-auto flex justify-between items-center">
-    <img src="carspro-logo.png" alt="CarsPro Logo" class="h-32" />
-
-    <div class="flex items-center space-x-6">
-      <!-- Навигация -->
-      <nav class="hidden md:flex space-x-4 text-sm">
+  <header class="bg-white shadow p-4">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <a href="/" class="block">
+        <img src="carspro-logo.png" alt="CarsPro Logo" class="h-32" loading="lazy" />
+      </a>
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-gray-800 text-2xl focus:outline-none" aria-label="Toggle navigation menu">☰</button>
+      </div>
+      <nav class="hidden md:flex items-center space-x-4 text-sm" role="navigation" aria-label="Main navigation">
         <a href="/auctions/" class="text-gray-700 hover:text-blue-600">Auctions</a>
         <a href="/blog/" class="text-gray-700 hover:text-blue-600">Blog</a>
+        <button onclick="setLanguage('lt')" class="border px-3 py-1 text-sm" aria-label="Change language to Lithuanian">LT</button>
+        <button onclick="setLanguage('en')" class="border px-3 py-1 text-sm" aria-label="Change language to English">EN</button>
       </nav>
-
-      <!-- Языки -->
-      <div>
-        <button onclick="setLanguage('lt')" class="border px-3 py-1 text-sm mr-2">LT</button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden text-center mt-4 space-y-2">
+      <a href="/auctions/" class="block text-gray-700 hover:text-blue-600">Auctions</a>
+      <a href="/blog/" class="block text-gray-700 hover:text-blue-600">Blog</a>
+      <div class="flex justify-center gap-2">
+        <button onclick="setLanguage('lt')" class="border px-3 py-1 text-sm">LT</button>
         <button onclick="setLanguage('en')" class="border px-3 py-1 text-sm">EN</button>
       </div>
     </div>
-  </div>
-
-  <div class="text-center mt-6">
-    <h1 class="text-4xl font-bold tracking-tight text-center animate-gradient">
-      <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#0D3B66] via-[#E63946] to-[#0D3B66] bg-[length:200%_auto]" data-i18n="title">
-        Automotive Logistics
-      </span>
-    </h1>
-
-    <p class="text-lg mb-4" data-i18n="subtitle">
-      Our automotive logistics services cover the entire EU. Door-to-door. Reliable automotive logistics and brokerage.
-    </p>
-
-    <a href="#shipping-form" class="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700" data-i18n="cta">
-      Request Quote
-    </a>
-  </div>
-</header>
+    <div class="text-center mt-6">
+      <h1 class="text-4xl font-bold tracking-tight animate-gradient">
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#0D3B66] via-[#E63946] to-[#0D3B66]">
+          Automotive Logistics
+        </span>
+      </h1>
+      <p class="text-lg mb-4">Our automotive logistics services cover the entire EU. Door-to-door. Reliable automotive logistics and brokerage.</p>
+      <a href="#shipping-form" class="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Request Quote</a>
+    </div>
+  </header>
 
   <section class="py-12 bg-gray-50">
     <div class="max-w-6xl mx-auto text-center">
       <h2 class="text-2xl font-semibold mb-8">Our Services</h2>
       <div id="services" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center mt-6"></div>
     </div>
-	<div id="service-info" class="mt-6 text-center text-blue-800 font-medium hidden"></div>  
+    <div id="service-info" class="mt-6 text-center text-blue-800 font-medium hidden"></div>
   </section>
 
   <section class="text-center py-10">
@@ -72,264 +90,177 @@
     </div>
   </section>
 
-	<!--shipping calculator form-->
   <section class="text-center py-10">
-  <h2 class="text-2xl font-semibold mb-6">Shipping Calculator</h2>
-  <!--<form id="shipping-form" class="max-w-md mx-auto flex flex-col gap-4">
-     <input type="text" id="pickup" placeholder="Pickup location" class="border px-4 py-2" />
-     <input type="text" id="delivery" placeholder="Delivery location" class="border px-4 py-2" />
-     <input type="number" id="weight" placeholder="Vehicle weight (kg)" class="border px-4 py-2" />
-     <button type="submit" class="bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Calculate</button>
-  </form-->
-  <form id="shipping-form" class="max-w-md mx-auto flex flex-col gap-4">
-  <input type="text" id="pickup" placeholder="Pickup location" class="border px-4 py-2" />
-  <input type="text" id="delivery" placeholder="Delivery location" class="border px-4 py-2" />
-
-  <select id="vehicle" class="border px-4 py-2">
-    <option value="sedan">Sedan</option>
-    <option value="suv">SUV</option>
-    <option value="truck">Truck</option>
-    <option value="van">Van</option>
-    <option value="motorcycle">Motorcycle</option>
-    <option value="bus">Bus</option>
-  </select>
-
-  <button type="submit" class="bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Calculate</button>
-  </form>  
-	<!--result-->
-  <!--div id="calc-result" class="mt-6 text-lg font-medium text-gray-800"></div-->
-  <div id="calc-result" class="mt-8 p-6 rounded-md bg-gradient-to-br from-blue-100 to-white border border-blue-300 shadow-lg text-gray-800 max-w-xl mx-auto text-center hidden">
-  <div class="text-2xl font-semibold mb-2" id="calc-output"></div>
-  <p class="text-sm text-gray-600 mb-4">
-    <strong>⚠️ Attention:</strong> This is not a public offer. For an accurate quote, please place an order or contact us directly.
-  </p>
-  <div class="flex flex-col gap-2 items-center justify-center">
-    <a href="https://t.me/CarsProEu" target="_blank" class="text-blue-700 underline hover:text-blue-900">Contact via Telegram</a>
-    <a href="https://wa.me/+37060780220" target="_blank" class="text-green-700 underline hover:text-green-900">Contact via WhatsApp</a>
-    <a href="mailto:administration@carspro.eu" class="text-gray-700 underline hover:text-black">Send us an email</a>
-  </div>
-  </div>	  
-  </section>
-
-	<!--broker request-->
-	
-  <!--section id="form" class="text-center py-10 bg-gray-100">
-    <h2 class="text-2xl font-semibold mb-6">Broker Request Form</h2>
-    <form class="max-w-md mx-auto flex flex-col gap-4">
-      <input type="text" placeholder="Country" class="border px-4 py-2" />
-      <input type="text" placeholder="Car Type" class="border px-4 py-2" />
-      <input type="text" placeholder="Budget" class="border px-4 py-2" />
-      <input type="text" placeholder="Vehicle Identification Number" class="border px-4 py-2" />
-      <button type="submit" class="bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Submit</button>
-    </form>
-</section-->
-  
-  <!--section class="text-center py-10">
     <h2 class="text-2xl font-semibold mb-6">Shipping Calculator</h2>
-    <form class="max-w-md mx-auto flex flex-col gap-4">
-      <input type="text" placeholder="Pickup location" class="border px-4 py-2" />
-      <input type="text" placeholder="Delivery location" class="border px-4 py-2" />
-      <input type="number" placeholder="Vehicle weight (kg)" class="border px-4 py-2" />
+    <form id="shipping-form" class="max-w-md mx-auto flex flex-col gap-4">
+      <input type="text" id="pickup" placeholder="Pickup location" class="border px-4 py-2" />
+      <input type="text" id="delivery" placeholder="Delivery location" class="border px-4 py-2" />
+      <select id="vehicle" class="border px-4 py-2">
+        <option value="sedan">Sedan</option>
+        <option value="suv">SUV</option>
+        <option value="truck">Truck</option>
+        <option value="van">Van</option>
+        <option value="motorcycle">Motorcycle</option>
+        <option value="bus">Bus</option>
+      </select>
       <button type="submit" class="bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Calculate</button>
     </form>
-</section-->
+    <div id="calc-result" class="mt-8 p-6 rounded-md bg-gradient-to-br from-blue-100 to-white border border-blue-300 shadow-lg text-gray-800 max-w-xl mx-auto text-center hidden">
+      <div class="text-2xl font-semibold mb-2" id="calc-output"></div>
+      <p class="text-sm text-gray-600 mb-4">
+        <strong>⚠️ Attention:</strong> This is not a public offer. For an accurate quote, please place an order or contact us directly.
+      </p>
+      <div class="flex flex-col gap-2 items-center justify-center">
+        <a href="https://t.me/CarsProEu" target="_blank" class="text-blue-700 underline hover:text-blue-900">Contact via Telegram</a>
+        <a href="https://wa.me/+37060780220" target="_blank" class="text-green-700 underline hover:text-green-900">Contact via WhatsApp</a>
+        <a href="mailto:administration@carspro.eu" class="text-gray-700 underline hover:text-black">Send us an email</a>
+      </div>
+    </div>
+  </section>
 
   <footer class="text-center py-6 text-gray-500 text-sm">
-  &copy; 2025 CarsPro. All rights reserved. Powered by UAB DEKO GROUP
+    &copy; 2025 CarsPro. All rights reserved. Powered by UAB DEKO GROUP
   </footer>
 
   <script>
-  const services = [
-    {
-      icon: "🚗",
-      title: "Car Sourcing",
-      text: "We find and verify vehicles across Europe.",
-      message: "Minimum fee for Car Sourcing is €250."
-    },
-    {
-      icon: "🔍",
-      title: "Inspection",
-      text: "Technical and legal checks before purchase.",
-      message: "Inspection starts from €120 per vehicle."
-    },
-    {
-      icon: '<img src="images/avtovoz-emoji.png" alt="Car Transporter" class="h-10 w-auto mx-auto" />',
-      title: "Transportation",
-      text: "Safe and fast delivery to your location.",
-      message: "Shipping cost varies by distance — ask for a quote."
-    },
-    {
-      icon: "📝",
-      title: "Customs",
-      text: "We handle all import paperwork.",
-      message: "Customs handling fee starts from €90."
-    }
-  ];
-
-  const container = document.getElementById("services");
-
-  services.forEach(service => {
-    const card = document.createElement("div");
-    card.className =
-      "p-4 bg-white shadow rounded-md transition hover:shadow-lg hover:scale-[1.02] cursor-pointer";
-    card.innerHTML = `
-      <div class="text-4xl mb-2">${service.icon}</div>
-      <h3 class="text-lg font-bold mb-1">${service.title}</h3>
-      <p class="text-sm text-gray-600">${service.text}</p>
-    `;
-    card.onclick = () => showServiceMessage(service.message);
-    container.appendChild(card);
-  });
-
-  function showServiceMessage(message) {
-    const infoBox = document.getElementById("service-info");
-    infoBox.textContent = message;
-    infoBox.classList.remove("hidden");
-    infoBox.scrollIntoView({ behavior: "smooth", block: "center" });
-	  // Automatic hidden in a 5 sec
-    setTimeout(() => {
-      infoBox.classList.add("hidden");
-    }, 5000);
-  }
-  </script>
-<!--calculator-->
-  <script>
-  // Centralized country name variations
-  const countrySynonyms = {
-    lithuania: ["lithuania", "lietuva", "litauen", "lituanie", "литва"],
-    germany: ["germany", "vokietija", "deutschland", "allemagne", "германия"],
-    belgium: ["belgium", "belgie", "belgique", "бельгия"],
-    netherlands: ["netherlands", "holland", "nederland", "нидерланды"]
-  };
-
-  // Check if input matches any synonym for a country
-  function matchesCountry(input, countryKey) {
-    const norm = input.toLowerCase();
-    return countrySynonyms[countryKey]?.some(syn => norm.includes(syn));
-  }
-
-  // Discount rule (e.g. LT → DE)
-  function isDiscountedRoute(pickup, delivery) {
-    if (matchesCountry(pickup, "lithuania") && matchesCountry(delivery, "germany")) {
-      return 0.3;
-    }
-    return 0;
-  }
-
-  // Max price rules based on routes
-  const maxPriceRules = [
-    {
-      from: "belgium",
-      to: "lithuania",
-      prices: { sedan: 650, suv: 700, motorcycle: 400 }
-    },
-    {
-      from: "netherlands",
-      to: "lithuania",
-      prices: { sedan: 650, suv: 700, motorcycle: 400 }
-    }
-  ];
-
-  function applyMaxPriceRules(pickup, delivery, vehicle, currentPrice) {
-    for (const rule of maxPriceRules) {
-      const fromMatch = matchesCountry(pickup, rule.from);
-      const toMatch = matchesCountry(delivery, rule.to);
-
-      if (fromMatch && toMatch) {
-        const max = rule.prices[vehicle];
-        if (max && currentPrice > max) {
-          return max;
-        }
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggle = document.getElementById('menu-toggle');
+      const menu = document.getElementById('mobile-menu');
+      if (toggle && menu) {
+        toggle.addEventListener('click', function () {
+          menu.classList.toggle('hidden');
+        });
       }
-    }
-    return currentPrice;
-  }
+    });
 
-  // Google Places Autocomplete
-  function initAutocomplete() {
-    const options = { types: ["geocode"] };
-    new google.maps.places.Autocomplete(document.getElementById("pickup"), options);
-    new google.maps.places.Autocomplete(document.getElementById("delivery"), options);
-  }
+    const services = [
+      {
+        icon: "🚗",
+        title: "Car Sourcing",
+        text: "We find and verify vehicles across Europe.",
+        message: "Minimum fee for Car Sourcing is €250."
+      },
+      {
+        icon: "🔍",
+        title: "Inspection",
+        text: "Technical and legal checks before purchase.",
+        message: "Inspection starts from €120 per vehicle."
+      },
+      {
+        icon: '<img src="images/avtovoz-emoji.png" alt="Car Transporter" class="h-10 w-auto mx-auto" />',
+        title: "Transportation",
+        text: "Safe and fast delivery to your location.",
+        message: "Shipping cost varies by distance — ask for a quote."
+      },
+      {
+        icon: "📝",
+        title: "Customs",
+        text: "We handle all import paperwork.",
+        message: "Customs handling fee starts from €90."
+      }
+    ];
+    const container = document.getElementById("services");
+    services.forEach(service => {
+      const card = document.createElement("div");
+      card.className = "p-4 bg-white shadow rounded-md transition hover:shadow-lg hover:scale-[1.02] cursor-pointer";
+      card.innerHTML = `<div class="text-4xl mb-2">${service.icon}</div><h3 class="text-lg font-bold mb-1">${service.title}</h3><p class="text-sm text-gray-600">${service.text}</p>`;
+      card.onclick = () => {
+        const infoBox = document.getElementById("service-info");
+        infoBox.textContent = service.message;
+        infoBox.classList.remove("hidden");
+        infoBox.scrollIntoView({ behavior: "smooth", block: "center" });
+        setTimeout(() => infoBox.classList.add("hidden"), 5000);
+      };
+      container.appendChild(card);
+    });
 
-  // Main calculator logic
-  const form = document.getElementById("shipping-form");
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const pickup = document.getElementById("pickup").value.trim();
-    const delivery = document.getElementById("delivery").value.trim();
-    const vehicle = document.getElementById("vehicle").value;
-
-    if (!pickup || !delivery || !vehicle) {
-      alert("Please fill in all fields correctly.");
-      return;
-    }
-
-    const rates = {
-      sedan: 0.60,
-      suv: 0.65,
-      truck: 0.70,
-      van: 0.75,
-      motorcycle: 0.55,
-      bus: 0.80
+    const countrySynonyms = {
+      lithuania: ["lithuania", "lietuva", "litauen", "lituanie", "литва"],
+      germany: ["germany", "vokietija", "deutschland", "allemagne", "германия"],
+      belgium: ["belgium", "belgie", "belgique", "бельгия"],
+      netherlands: ["netherlands", "holland", "nederland", "нидерланды"]
     };
 
-    const rate = rates[vehicle];
-    const service = new google.maps.DistanceMatrixService();
+    function matchesCountry(input, countryKey) {
+      const norm = input.toLowerCase();
+      return countrySynonyms[countryKey]?.some(syn => norm.includes(syn));
+    }
 
-    service.getDistanceMatrix(
+    function isDiscountedRoute(pickup, delivery) {
+      return matchesCountry(pickup, "lithuania") && matchesCountry(delivery, "germany") ? 0.3 : 0;
+    }
+
+    const maxPriceRules = [
       {
+        from: "belgium",
+        to: "lithuania",
+        prices: { sedan: 650, suv: 700, motorcycle: 400 }
+      },
+      {
+        from: "netherlands",
+        to: "lithuania",
+        prices: { sedan: 650, suv: 700, motorcycle: 400 }
+      }
+    ];
+
+    function applyMaxPriceRules(pickup, delivery, vehicle, currentPrice) {
+      for (const rule of maxPriceRules) {
+        const fromMatch = matchesCountry(pickup, rule.from);
+        const toMatch = matchesCountry(delivery, rule.to);
+        if (fromMatch && toMatch) {
+          const max = rule.prices[vehicle];
+          if (max && currentPrice > max) return max;
+        }
+      }
+      return currentPrice;
+    }
+
+    function initAutocomplete() {
+      const options = { types: ["geocode"] };
+      new google.maps.places.Autocomplete(document.getElementById("pickup"), options);
+      new google.maps.places.Autocomplete(document.getElementById("delivery"), options);
+    }
+
+    const form = document.getElementById("shipping-form");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const pickup = document.getElementById("pickup").value.trim();
+      const delivery = document.getElementById("delivery").value.trim();
+      const vehicle = document.getElementById("vehicle").value;
+      if (!pickup || !delivery || !vehicle) return alert("Please fill in all fields correctly.");
+
+      const rates = { sedan: 0.60, suv: 0.65, truck: 0.70, van: 0.75, motorcycle: 0.55, bus: 0.80 };
+      const rate = rates[vehicle];
+      const service = new google.maps.DistanceMatrixService();
+
+      service.getDistanceMatrix({
         origins: [pickup],
         destinations: [delivery],
         travelMode: "DRIVING",
         unitSystem: google.maps.UnitSystem.METRIC,
-      },
-      function (response, status) {
-        if (status !== "OK") {
-          alert("Error: " + status);
-          return;
-        }
+      }, function (response, status) {
+        if (status !== "OK") return alert("Error: " + status);
 
         const distanceMeters = response.rows[0].elements[0].distance.value;
         const distanceKm = distanceMeters / 1000;
-
-        let basePrice = distanceKm * rate;
-        let price = basePrice;
-
-        // Apply minimum price rules
+        let price = distanceKm * rate;
         if (distanceKm < 100) price = Math.max(price, 250);
         else if (distanceKm >= 320 && distanceKm <= 420) price = Math.max(price, 350);
 
-        // Apply route-based discount
         const discount = isDiscountedRoute(pickup, delivery);
-        if (discount > 0) {
-          price *= (1 - discount);
-        }
-
-        // Apply max price limits
+        if (discount > 0) price *= (1 - discount);
         price = applyMaxPriceRules(pickup, delivery, vehicle, price);
 
-        // Render result
         let resultHtml = `Distance: ${distanceKm.toFixed(1)} km<br>Total Price: €${price.toFixed(2)}`;
-
-        if (discount > 0) {
-          resultHtml += `<div class="text-green-700 text-sm mt-2">
-            A discount of ${Math.round(discount * 100)}% has been applied.
-          </div>`;
-        }
+        if (discount > 0) resultHtml += `<div class="text-green-700 text-sm mt-2">A discount of ${Math.round(discount * 100)}% has been applied.</div>`;
 
         document.getElementById("calc-output").innerHTML = resultHtml;
         const resultDiv = document.getElementById("calc-result");
         resultDiv.classList.remove("hidden");
         resultDiv.scrollIntoView({ behavior: "smooth" });
-      }
-    );
-  });
-</script>
-
-<!-- Google Maps API -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1Fb-dIQpieKC0rZDNwkJZdMIjYZOHuuE&libraries=places&callback=initAutocomplete" async defer></script>
+      });
+    });
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1Fb-dIQpieKC0rZDNwkJZdMIjYZOHuuE&libraries=places&callback=initAutocomplete" async defer></script>
 </body>
 </html>
