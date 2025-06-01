@@ -1,26 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Understanding EU VAT Refund on Car Purchases</title>
   <meta name="description" content="A guide to how VAT refunds work for car purchases in the EU — who qualifies, when you get a refund, and common pitfalls to avoid.">
+  <meta name="keywords" content="EU VAT refund, car VAT reclaim, import tax return, buy car with VAT, VAT refund Lithuania, vehicle purchase EU, car broker VAT help">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://carspro.lt/blog/eu-vat-refund">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Understanding EU VAT Refund on Car Purchases">
+  <meta property="og:description" content="Learn who qualifies for VAT refund on EU car purchases and how to claim it successfully.">
+  <meta property="og:url" content="https://carspro.lt/blog/eu-vat-refund">
+  <meta property="og:image" content="https://carspro.lt/images/eu-vat-refund.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Understanding EU VAT Refund on Car Purchases">
+  <meta name="twitter:description" content="Learn who qualifies for VAT refund on EU car purchases and how to claim it successfully.">
+  <meta name="twitter:image" content="https://carspro.lt/images/eu-vat-refund.webp">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet" />
+  <link href="/style.css" rel="stylesheet" />
+  <style>
+    h1, h2, .btn {
+      font-family: 'Montserrat', sans-serif;
+    }
+  </style>
+  
 </head>
 <body class="bg-white text-gray-800 font-sans">
-  <header class="bg-gray-100 p-4 shadow">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <a href="/"><img src="/carspro-logo.png" alt="CarsPro Logo" class="h-28"></a>
-      <nav class="space-x-4">
-        <a href="/" class="text-gray-700 hover:text-blue-600">Home</a>
-        <a href="/auctions/" class="text-gray-700 hover:text-blue-600">Auctions</a>
-        <a href="/blog/" class="text-blue-700 font-semibold">Blog</a>
-      </nav>
+<header class="bg-gray-100 p-4 shadow">
+  <div class="max-w-6xl mx-auto flex justify-between items-center">
+    <a href="/">
+      <img src="/carspro-logo.png" alt="CarsPro Logo" class="h-32" />
+    </a>
+    <div class="md:hidden">
+      <button id="menu-toggle" class="text-gray-800 text-2xl focus:outline-none" aria-label="Toggle navigation menu">☰</button>
     </div>
-  </header>
-
-  <main class="max-w-4xl mx-auto px-4 py-10">
+    <nav class="hidden md:flex items-center space-x-4 text-sm" role="navigation" aria-label="Main navigation">
+      <a href="/" class="text-gray-700 hover:text-blue-600">Home</a>
+      <a href="/auctions/" class="text-gray-700 hover:text-blue-600">Auctions</a>
+      <a href="/blog/" class="text-blue-700 font-semibold">Blog</a>
+      <button onclick="setLanguage('lt')" class="border px-3 py-1 text-sm">LT</button>
+      <button onclick="setLanguage('en')" class="border px-3 py-1 text-sm">EN</button>
+    </nav>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden text-center mt-4 space-y-2">
+    <a href="/" class="block text-gray-700 hover:text-blue-600">Home</a>
+    <a href="/auctions/" class="block text-gray-700 hover:text-blue-600">Auctions</a>
+    <a href="/blog/" class="block text-blue-700 font-semibold">Blog</a>
+    <div class="flex justify-center gap-2">
+      <button onclick="setLanguage('lt')" class="border px-3 py-1 text-sm">LT</button>
+      <button onclick="setLanguage('en')" class="border px-3 py-1 text-sm">EN</button>
+    </div>
+  </div>
+</header>
+<main class="max-w-4xl mx-auto px-4 py-10">
     <h1 class="text-3xl font-bold mb-6">Understanding EU VAT Refund on Car Purchases</h1>
 
     <p class="mb-4">If you're buying a car in one EU country and plan to export or register it in another, you may be eligible for a VAT refund. This guide explains how VAT works on cross-border car purchases, when you can get a refund, and what documentation is required.</p>
@@ -101,30 +136,40 @@
 
   <footer class="text-center py-6 text-gray-500 text-sm">
    &copy; 2025 CarsPro. All rights reserved. Powered by UAB DEKO GROUP
-  </footer>
-  
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "Understanding EU VAT Refund on Car Purchases",
-      "description": "A guide to how VAT refunds work for car purchases in the EU — who qualifies, when you get a refund, and common pitfalls to avoid.",
-      "image": "https://carspro.lt/images/eu-vat-refund.webp",
-      "author": {
-        "@type": "Organization",
-        "name": "CarsPro"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "CarsPro",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://carspro.lt/carspro-logo.png"
-        }
-      },
-      "datePublished": "2025-05-29"
+</footer>
+<!-- rest of the page content remains unchanged -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
     }
-    </script>
-  
+  });
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Understanding EU VAT Refund on Car Purchases",
+    "description": "A guide to how VAT refunds work for car purchases in the EU — who qualifies, when you get a refund, and common pitfalls to avoid.",
+    "image": "https://carspro.lt/images/eu-vat-refund.webp",
+    "author": {
+      "@type": "Organization",
+      "name": "CarsPro"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CarsPro",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://carspro.lt/carspro-logo.png"
+      }
+    },
+    "datePublished": "2025-05-29"
+  }
+</script>
 </body>
 </html>
