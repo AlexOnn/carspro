@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Professional EU Car Auctions: Why a Broker Matters</title>
-  <meta name="description" content="Learn how brokers help buyers navigate professional European car auctions like BCA, Auto1, and Copart. Avoid pitfalls and ensure safe delivery.">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CarsPro Blog — Insights on Car Import & Auctions</title>
+  <meta name="description" content="Tips and news on car import and buying from European auctions. Learn about logistics, VAT, and working with an auction broker.">
+  <meta name="keywords" content="car import blog, auction insights, BCA tips, Auto1 info, Copart Lithuania, vehicle logistics EU, buying cars from auctions, car transport advice, VAT import car, auto broker news">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://carspro.lt/blog/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CarsPro Blog — Insights on Car Import & Auctions">
+  <meta property="og:description" content="Expert advice on buying cars from auctions, logistics, costs, and regulations in the EU.">
+  <meta property="og:url" content="https://carspro.lt/blog/">
+  <meta property="og:image" content="https://carspro.lt/images/carspro-logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CarsPro Blog — Insights on Car Import & Auctions">
+  <meta name="twitter:description" content="Stay informed with our auction buying guides and car import logistics insights.">
+  <meta name="twitter:image" content="https://carspro.lt/images/carspro-logo.png">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet" />
+  <link href="/style.css" rel="stylesheet" />
   <style>
     h1, h2, .btn {
       font-family: 'Montserrat', sans-serif;
@@ -16,19 +28,33 @@
   </style>
 </head>
 <body class="bg-white text-gray-800 font-sans">
-  <header class="bg-gray-100 p-4 shadow">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <div class="flex items-center space-x-4">
-        <a href="/"><img src="/carspro-logo.png" alt="CarsPro Logo" class="h-32"></a>
-      </div>
-      <nav class="space-x-4">
-        <a href="/" class="text-gray-700 hover:text-blue-600">Home</a>
-        <a href="/auctions/" class="text-gray-700 hover:text-blue-600">Auctions</a>
-        <a href="/blog/" class="text-blue-700 font-semibold">Blog</a>
-      </nav>
+<!-- Header -->
+<header class="bg-gray-100 p-4 shadow">
+  <div class="max-w-6xl mx-auto flex justify-between items-center">
+    <a href="/">
+      <img src="/carspro-logo.png" alt="CarsPro Logo" class="h-32" />
+    </a>
+    <div class="md:hidden">
+      <button id="menu-toggle" class="text-gray-800 text-2xl focus:outline-none" aria-label="Toggle navigation menu">☰</button>
     </div>
-  </header>
-
+    <nav class="hidden md:flex items-center space-x-4 text-sm" role="navigation" aria-label="Main navigation">
+      <a href="/" class="text-gray-700 hover:text-blue-600">Home</a>
+      <a href="/auctions/" class="text-gray-700 hover:text-blue-600">Auctions</a>
+      <a href="/blog/" class="text-blue-700 font-semibold">Blog</a>
+      <button onclick="setLanguage('lt')" class="border px-3 py-1 text-sm">LT</button>
+      <button onclick="setLanguage('en')" class="border px-3 py-1 text-sm">EN</button>
+    </nav>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden text-center mt-4 space-y-2">
+    <a href="/" class="block text-gray-700 hover:text-blue-600">Home</a>
+    <a href="/auctions/" class="block text-gray-700 hover:text-blue-600">Auctions</a>
+    <a href="/blog/" class="block text-blue-700 font-semibold">Blog</a>
+    <div class="flex justify-center gap-2">
+      <button onclick="setLanguage('lt')" class="border px-3 py-1 text-sm">LT</button>
+      <button onclick="setLanguage('en')" class="border px-3 py-1 text-sm">EN</button>
+    </div>
+  </div>
+</header>
   <main class="max-w-4xl mx-auto px-4 py-10">
     <h1 class="text-3xl font-bold mb-6">Professional EU Car Auctions: Why a Broker Matters</h1>
 
