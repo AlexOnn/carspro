@@ -134,7 +134,21 @@
 </div>
     </main>
 
-  <script type="application/ld+json">
+  <footer class="text-center py-6 text-gray-500 text-sm">
+   &copy; 2025 CarsPro. All rights reserved. Powered by UAB DEKO GROUP
+  </footer>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    if (toggle && menu) {
+      toggle.addEventListener('click', function () {
+        menu.classList.toggle('hidden');
+      });
+    }
+  });
+ </script>
+ <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -155,21 +169,6 @@
     },
     "datePublished": "2025-05-28"
   }
-  </script>
-
-  <footer class="text-center py-6 text-gray-500 text-sm">
-   &copy; 2025 CarsPro. All rights reserved. Powered by UAB DEKO GROUP
-  </footer>
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('mobile-menu');
-    if (toggle && menu) {
-      toggle.addEventListener('click', function () {
-        menu.classList.toggle('hidden');
-      });
-    }
-  });
-</script>
+ </script>
 </body>
 </html>
