@@ -9,11 +9,12 @@ function setLanguage(lang) {
       if (response.ok) {
         window.location.href = targetPath;
       } else {
-        window.location.href = `/en${cleanedPath}`;
+        // fallback: default EN (without /en/)
+        window.location.href = cleanedPath;
       }
     })
     .catch(() => {
-      window.location.href = `/en${cleanedPath}`;
+      window.location.href = cleanedPath;
     });
 }
 
