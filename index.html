@@ -130,16 +130,18 @@
     &copy; 2025 CarsPro. All rights reserved. Powered by UAB DEKO GROUP
   </footer>
 
+  <script src="/main.js"></script>
+
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const toggle = document.getElementById('menu-toggle');
-      const menu = document.getElementById('mobile-menu');
-      if (toggle && menu) {
-        toggle.addEventListener('click', function () {
-          menu.classList.toggle('hidden');
-        });
-      }
-    });
+    // document.addEventListener('DOMContentLoaded', function () {
+    //   const toggle = document.getElementById('menu-toggle');
+    //   const menu = document.getElementById('mobile-menu');
+    //   if (toggle && menu) {
+    //     toggle.addEventListener('click', function () {
+    //       menu.classList.toggle('hidden');
+    //     });
+    //   }
+    // });
 
     const services = [
       {
@@ -270,7 +272,7 @@
     });
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1Fb-dIQpieKC0rZDNwkJZdMIjYZOHuuE&libraries=places&callback=initAutocomplete" async defer></script>
-  <script>
+<!--   <script>
   function setLanguage(lang) {
     const currentPath = window.location.pathname;
     const cleanedPath = currentPath.replace(/^\/(lt|en)\//, '/');
@@ -278,6 +280,6 @@
                     lang === 'lt' ? `/lt${cleanedPath}` : cleanedPath;
     window.location.href = newPath;
   }
-</script>
+</script> -->
 </body>
 </html>
