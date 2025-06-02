@@ -1,15 +1,18 @@
-// Language switcher
+// Language switcher with multi-language support
 function setLanguage(lang) {
+  const supportedLangs = ["en", "lt", "pl", "de", "fr"];
+  if (!supportedLangs.includes(lang)) lang = "en";
+
   const currentPath = window.location.pathname;
-  const cleanedPath = currentPath.replace(/^\/(lt|en)\//, '/');
-  const targetPath = `/${lang}${cleanedPath}`;
+  const cleanedPath = currentPath.replace(/^\/(lt|en|pl|de|fr)\//, '/');
+  const targetPath = lang === "en" ? cleanedPath : `/${lang}${cleanedPath}`;
 
   fetch(targetPath, { method: 'HEAD' })
     .then(response => {
       if (response.ok) {
         window.location.href = targetPath;
       } else {
-        // fallback: default EN (without /en/)
+        // fallback: go to English default
         window.location.href = cleanedPath;
       }
     })
