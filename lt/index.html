@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CarsPro — Automobilių logistika Europoje</title>
-  <meta name="description" content="Automobilių logistika ir tarpininkavimas visoje Europoje. Greitas pristatymas ir automatinis kainos apskaičiavimas. Automobilių pristatymas iš Vokietijos, Beneliukso, Prancūzijos, Italijos, Latvijos į Baltijos šalis ir Lenkiją.">
+  <title>CarsPro — Automobilių pervežimas iš Europos</title>
+  <meta name="description" content="Greitas automobilių transportavimas visoje Europoje. Kainos apskaičiavimas internetu. Vežame iš Vokietijos, Beneliukso, Italijos ir kitų šalių.. Automobilių pristatymas iš Vokietijos, Beneliukso, Prancūzijos, Italijos, Latvijos į Baltijos šalis ir Lenkiją.">
   <meta name="keywords" content="automobilių logistika, auto transportas Europa, transportavimas ES, automobilių pristatymas Vokietija Lietuva, CarsPro tarpininkas, ES automobilių logistika">
   <meta name="robots" content="index, follow">
   <link rel="alternate" hreflang="en" href="https://carspro.lt/" />
@@ -52,14 +52,14 @@
       </div>
       <nav class="hidden md:flex items-center space-x-4 text-sm" role="navigation" aria-label="Pagrindinė navigacija">
         <a href="/lt/auctions/" class="text-gray-700 hover:text-blue-600">Aukcionai</a>
-        <a href="/lt/blog/" class="text-gray-700 hover:text-blue-600">Tinklaraštis</a>
+        <a href="/lt/blog/" class="text-gray-700 hover:text-blue-600">Blogas</a>
         <button onclick="setLanguage('lt')" class="border px-3 py-1 text-sm" aria-label="Pakeisti kalbą į lietuvių">LT</button>
         <button onclick="setLanguage('en')" class="border px-3 py-1 text-sm" aria-label="Pakeisti kalbą į anglų">EN</button>
       </nav>
     </div>
     <div id="mobile-menu" class="hidden md:hidden text-center mt-4 space-y-2">
       <a href="/lt/auctions/" class="block text-gray-700 hover:text-blue-600">Aukcionai</a>
-      <a href="/lt/blog/" class="block text-gray-700 hover:text-blue-600">Tinklaraštis</a>
+      <a href="/lt/blog/" class="block text-gray-700 hover:text-blue-600">Blogas</a>
       <div class="flex justify-center gap-2">
         <button onclick="setLanguage('lt')" class="border px-3 py-1 text-sm">LT</button>
         <button onclick="setLanguage('en')" class="border px-3 py-1 text-sm">EN</button>
@@ -71,16 +71,49 @@
           Automobilių logistika
         </span>
       </h1>
-      <p class="text-lg mb-4">Mūsų automobilių logistikos paslaugos apima visą ES. Nuo durų iki durų. Patikimas automobilių tarpininkavimas ir pristatymas.</p>
+      <p class="text-lg mb-4">Vežame automobilius po visą Europą – greitai, paprastai ir be streso. Pasirūpinsime viskuo nuo A iki Z.</p>
       <a href="#shipping-form" class="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Gauti pasiūlymą</a>
     </div>
   </header>
+
+  <!-- Services block -->
+  <section class="py-12 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl font-semibold mb-6 text-center">Paslaugos</h2>
+      <div id="services" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+      <div id="service-info" class="mt-6 text-center text-blue-700 font-medium hidden"></div>
+    </div>
+  </section>
+
+  <!-- Calculator block -->
+  <section class="py-12">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-2xl font-semibold mb-6 text-center">Pristatymo skaičiuoklė</h2>
+      <form id="shipping-form" class="max-w-md mx-auto flex flex-col gap-4">
+        <input type="text" id="pickup" placeholder="Paėmimo vieta" class="border px-4 py-2" />
+        <input type="text" id="delivery" placeholder="Pristatymo vieta" class="border px-4 py-2" />
+        <select id="vehicle" class="border px-4 py-2">
+          <option value="sedan">Sedanas</option>
+          <option value="suv">SUV</option>
+          <option value="van">Mikroautobusas</option>
+          <option value="motorcycle">Motociklas</option>
+          <option value="bus">Autobusas</option>
+        </select>
+        <button type="submit" class="bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Apskaičiuoti</button>
+      </form>
+      <div id="calc-result" class="mt-8 p-6 rounded-md bg-gradient-to-br from-blue-100 to-white border border-blue-300 shadow-lg text-gray-800 max-w-xl mx-auto text-center hidden">
+        <div class="text-2xl font-semibold mb-2" id="calc-output"></div>
+        <p class="text-sm text-gray-600 mb-4">
+          <strong>⚠️ Dėmesio:</strong> tai yra preliminari kainą. Norėdami gauti tikslią kainą, pateikite užsakymą arba susisiekite su mumis.
+        </p>
+      </div>
+    </div>
+  </section>
 
   <!-- Scripts -->
   <script src="/js/main.js"></script>
   <script src="/js/calculator.js"></script>
   <script src="/js/services.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initAutocomplete" async defer></script>
+  
 </body>
 </html>
-
