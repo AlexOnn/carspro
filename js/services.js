@@ -13,7 +13,7 @@ const services = [
     message: "Inspection starts from €120 per vehicle."
   },
   {
-    icon: '<img src="/avtovoz-emoji.png" alt="Car Transporter" class="h-10 w-auto mx-auto" />',
+    icon: '<img src="/images/avtovoz-emoji.png" alt="Car Transporter" class="h-10 w-auto mx-auto" />',
     title: "Transportation",
     text: "Safe and fast delivery to your location.",
     message: "Shipping cost varies by distance — ask for a quote."
