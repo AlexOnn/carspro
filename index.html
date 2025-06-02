@@ -7,6 +7,9 @@
   <meta name="description" content="Car logistics and brokerage across Europe. Fast delivery and automatic quotation. Delivery from Germany, Benelux, France, Italy, Latvia to Baltics and Poland.">
   <meta name="keywords" content="car logistics, auto transport Europe, vehicle delivery EU, car shipping Germany Lithuania, CarsPro broker, EU vehicle logistics">
   <meta name="robots" content="index, follow">
+  <link rel="alternate" hreflang="en" href="https://carspro.lt/en/" />
+  <link rel="alternate" hreflang="lt" href="https://carspro.lt/lt/" />
+  <link rel="alternate" hreflang="x-default" href="https://carspro.lt/" />
   <link rel="canonical" href="https://carspro.lt/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="CarsPro — Automotive Logistics in Europe">
@@ -267,5 +270,14 @@
     });
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1Fb-dIQpieKC0rZDNwkJZdMIjYZOHuuE&libraries=places&callback=initAutocomplete" async defer></script>
+  <script>
+  function setLanguage(lang) {
+    const currentPath = window.location.pathname;
+    const cleanedPath = currentPath.replace(/^\/(lt|en)\//, '/');
+    const newPath = lang === 'en' ? `/en${cleanedPath}` :
+                    lang === 'lt' ? `/lt${cleanedPath}` : cleanedPath;
+    window.location.href = newPath;
+  }
+</script>
 </body>
 </html>
