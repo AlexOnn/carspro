@@ -13,8 +13,8 @@ const contactTranslations = {
   en: { telegram: "Contact via Telegram", whatsapp: "Contact via WhatsApp", email: "Send us an email" }
 };
 
-const lang = document.documentElement.lang.slice(0, 2);
-const trans = contactTranslations[lang] || contactTranslations["en"];
+const contactLang = document.documentElement.lang.slice(0, 2);
+const trans = contactTranslations[contactLang] || contactTranslations["en"];
 
 const contactHtml = `
   <div class="mt-4 flex flex-col gap-2 items-center justify-center text-sm">
