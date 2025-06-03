@@ -1,4 +1,4 @@
-const lang = document.documentElement.lang.slice(0, 2);
+const servicesLang = document.documentElement.lang.slice(0, 2);
 
 const translations = {
   en: [
@@ -55,7 +55,7 @@ const translations = {
   ]
 };
 
-const services = translations[lang] || translations["en"];
+const services = translations[servicesLang] || translations["en"];
 
 const container = document.getElementById("services");
 if (container) {
