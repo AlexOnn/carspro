@@ -22,3 +22,10 @@ const contactHtml = `
     <a href="https://wa.me/+37060780220" target="_blank" class="text-green-700 underline hover:text-green-900">${trans.whatsapp}</a>
     <a href="mailto:administration@carspro.eu" class="text-gray-700 underline hover:text-black">${trans.email}</a>
   </div>`;
+
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("calc-result");
+  if (container) {
+    container.insertAdjacentHTML("beforeend", contactHtml);
+  }
+});
