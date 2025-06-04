@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vehicle Transport from Europe — Safe Delivery by CarsPro</title>
+  <meta name="description" content="Detailed step-by-step guide to transporting vehicles from EU auctions to your destination. Learn about inspection, loading, logistics and risks." />
+  <meta name="keywords" content="vehicle transport from Europe, car delivery process, auto logistics, EU auction shipping, vehicle loading photos" />
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://carspro.lt/transport-process/" />
+  <link rel="alternate" hreflang="lt" href="https://carspro.lt/lt/transport-process/" />
+  <link rel="alternate" hreflang="en" href="https://carspro.lt/transport-process/" />
+  <meta property="og:title" content="Step-by-Step Vehicle Transport from EU Auctions — CarsPro">
+  <meta property="og:description" content="Explore the full process of car logistics with visual photos: loading, paperwork, route planning, delivery and more." />
+  <meta property="og:url" content="https://carspro.lt/transport-process/">
+  <meta property="og:image" content="https://carspro.lt/images/transport-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CarsPro Transport Process">
+  <meta name="twitter:description" content="Your detailed guide to international vehicle shipping from auctions in Europe.">
+  <meta name="twitter:image" content="https://carspro.lt/images/transport-cover.jpg">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    section {
+      position: relative;
+      height: 100vh;
+      color: white;
+    }
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .content {
+      position: relative;
+      z-index: 10;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 8rem 1rem;
+      text-align: center;
+    }
+    h1, h2 {
+      font-family: 'Montserrat', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-black">
+  <!-- Section 1 -->
+  <section style="background-image: url('/images/loading-1.jpg'); background-size: cover; background-position: center;">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1 class="text-4xl font-bold mb-4">Vehicle Pickup & Inspection</h1>
+      <h2 class="text-xl mb-2">We begin by verifying documents and inspecting the vehicle at the auction site.</h2>
+      <p class="text-md">Our logistics partner ensures legal compliance and physical condition before any transport begins.</p>
+    </div>
+  </section>
+
+  <!-- Section 2 -->
+  <section style="background-image: url('/images/loading-2.jpg'); background-size: cover; background-position: center;">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1 class="text-4xl font-bold mb-4">Loading Onto Trailer</h1>
+      <h2 class="text-xl mb-2">Proper equipment and experienced handlers guarantee secure loading.</h2>
+      <p class="text-md">We document each step with photos and take extra care with high-value cars.</p>
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section style="background-image: url('/images/loading-3.jpg'); background-size: cover; background-position: center;">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1 class="text-4xl font-bold mb-4">Customs & Transit</h1>
+      <h2 class="text-xl mb-2">All paperwork, including export declarations, is handled by our specialists.</h2>
+      <p class="text-md">We monitor GPS tracking and optimize delivery routes for timely arrivals.</p>
+    </div>
+  </section>
+
+  <!-- Section 4 -->
+  <section style="background-image: url('/images/loading-4.jpg'); background-size: cover; background-position: center;">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1 class="text-4xl font-bold mb-4">Final Delivery & Handover</h1>
+      <h2 class="text-xl mb-2">Cars are delivered to the agreed location, cleaned and verified.</h2>
+      <p class="text-md">We collect customer signatures, provide final reports, and ensure full satisfaction.</p>
+    </div>
+  </section>
+</body>
+</html>
