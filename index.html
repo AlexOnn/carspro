@@ -200,10 +200,13 @@
           ar: 'اتصل بنا بشأن هذه الخدمة',
           tr: 'Bu hizmet hakkında bizimle iletişime geçin',
         };
+        
         const contactText = translations[lang] || translations.en;
+        const contactLink = lang === 'en' ? '/contacts/' : `/${lang}/contacts/`;
+        
         infoBox.innerHTML = `
           ${service.message}<br>
-          <a href="/${lang}/contacts/" class="underline text-blue-700 hover:text-blue-900 text-sm mt-2 inline-block">
+          <a href="${contactLink}" class="underline text-blue-700 hover:text-blue-900 text-sm mt-2 inline-block">
             ${contactText}
           </a>
         `;
