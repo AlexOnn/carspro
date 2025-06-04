@@ -66,10 +66,35 @@ if (container) {
     card.onclick = () => {
       const infoBox = document.getElementById("service-info");
       // infoBox.textContent = service.message;
-      infoBox.innerHTML = `
-        ${service.message}<br>
-          <a href="/lt/contacts/" class="underline text-blue-700 hover:text-blue-900 text-sm mt-2 inline-block">
-          Susisiekti dėl šios paslaugos
+      // infoBox.innerHTML = `
+      //   ${service.message}<br>
+      //     <a href="/lt/contacts/" class="underline text-blue-700 hover:text-blue-900 text-sm mt-2 inline-block">
+      //     Susisiekti dėl šios paslaugos
+      //     </a>
+      //   `;
+      const lang = document.documentElement.lang;
+        const translations = {
+          lt: 'Susisiekti dėl šios paslaugos',
+          en: 'Contact us about this service',
+          pl: 'Skontaktuj się w sprawie tej usługi',
+          de: 'Kontaktieren Sie uns zu diesem Service',
+          fr: 'Contactez-nous pour ce service',
+          ro: 'Contactați-ne pentru acest serviciu',
+          et: 'Võta selle teenuse kohta ühendust',
+          lv: 'Sazinieties par šo pakalpojumu',
+          cs: 'Kontaktujte nás ohledně této služby',
+          nl: 'Neem contact met ons op over deze dienst',
+          ar: 'اتصل بنا بشأن هذه الخدمة',
+          tr: 'Bu hizmet hakkında bizimle iletişime geçin',
+        };
+        
+        const contactText = translations[lang] || translations.en;
+        const contactLink = lang === 'en' ? '/contacts/' : `/${lang}/contacts/`;
+        
+        infoBox.innerHTML = `
+          ${service.message}<br>
+          <a href="${contactLink}" class="underline text-blue-700 hover:text-blue-900 text-sm mt-2 inline-block">
+            ${contactText}
           </a>
         `;
       infoBox.classList.remove("hidden");
