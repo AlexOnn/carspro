@@ -66,4 +66,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://carspro.lt/contacts/</loc>
+    <lastmod>2025-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://carspro.lt/lt/contacts/</loc>
+    <lastmod>2025-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+</url>
 </urlset>
