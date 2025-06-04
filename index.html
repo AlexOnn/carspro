@@ -176,7 +176,13 @@
       card.innerHTML = `<div class="text-4xl mb-2">${service.icon}</div><h3 class="text-lg font-bold mb-1">${service.title}</h3><p class="text-sm text-gray-600">${service.text}</p>`;
       card.onclick = () => {
         const infoBox = document.getElementById("service-info");
-        infoBox.textContent = service.message;
+        // infoBox.textContent = service.message;
+        infoBox.innerHTML = `
+        ${service.message}<br>
+          <a href="/lt/contacts/" class="underline text-blue-700 hover:text-blue-900 text-sm mt-2 inline-block">
+          Susisiekti dėl šios paslaugos
+          </a>
+        `;
         infoBox.classList.remove("hidden");
         infoBox.scrollIntoView({ behavior: "smooth", block: "center" });
         setTimeout(() => infoBox.classList.add("hidden"), 5000);
