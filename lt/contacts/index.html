@@ -42,7 +42,7 @@
   </style>
 </head>
 <body class="bg-white text-gray-800 font-sans">
-  <header class="bg-white shadow p-4 min-h-[8rem]">
+  <header class="bg-white shadow p-4">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
       <a href="/lt/" class="block">
         <img src="/carspro-logo.png" alt="CarsPro Logo" class="h-32 w-auto" loading="lazy" />
@@ -50,25 +50,25 @@
       <div class="md:hidden">
         <button id="menu-toggle" class="text-gray-800 text-2xl focus:outline-none" aria-label="Toggle navigation menu">☰</button>
       </div>
-      <nav class="hidden md:flex items-center gap-x-6 text-sm" role="navigation" aria-label="Pagrindinė navigacija">
-        <a href="/lt/" class="text-gray-700 hover:text-blue-600">Pradžia</a>
+      <nav class="hidden md:flex items-center space-x-4 text-sm" role="navigation" aria-label="Pagrindinė navigacija">
         <a href="/lt/auctions/" class="text-gray-700 hover:text-blue-600">Aukcionai</a>
         <a href="/lt/blog/" class="text-gray-700 hover:text-blue-600">Blogas</a>
-        <button onclick="setLanguage('lt')" class="border px-3 py-1 text-sm">LT</button>
-        <button onclick="setLanguage('en')" class="border px-3 py-1 text-sm">EN</button>
+        <a href="/lt/contacts/" class="text-gray-700 hover:text-blue-600">Kontaktai</a>
+        <button onclick="setLanguage('lt')" class="border px-3 py-1 text-sm" aria-label="Pakeisti kalbą į lietuvių">LT</button>
+        <button onclick="setLanguage('en')" class="border px-3 py-1 text-sm" aria-label="Pakeisti kalbą į anglų">EN</button>
       </nav>
     </div>
-     <div class="hidden md:block mt-4 text-center">
-      <p class="text-sm text-gray-500 animate-pulse">📲 Gaukite atsakymą greičiau — <a href="https://wa.me/+37060780220" class="underline text-green-700 hover:text-green-900">rašykite mums per WhatsApp</a></p>
-    </div>
     <div id="mobile-menu" class="hidden md:hidden text-center mt-4 space-y-2">
+      <a href="/lt/auctions/" class="block text-gray-700 hover:text-blue-600">Aukcionai</a>
+      <a href="/lt/blog/" class="block text-gray-700 hover:text-blue-600">Blogas</a>
+      <a href="/lt/contacts/" class="block text-gray-700 hover:text-blue-600">Kontaktai</a>
       <div class="flex justify-center gap-2">
-        <a href="/lt/" class="block text-gray-700 hover:text-blue-600">Pradžia</a>
-        <a href="/lt/auctions/" class="block text-gray-700 hover:text-blue-600">Aukcionai</a>
-        <a href="/lt/blog/" class="block text-gray-700 hover:text-blue-600">Blogas</a>
         <button onclick="setLanguage('lt')" class="border px-3 py-1 text-sm">LT</button>
         <button onclick="setLanguage('en')" class="border px-3 py-1 text-sm">EN</button>
       </div>
+    </div>
+    <div class="hidden md:block mt-4 text-center">
+      <p class="text-sm text-gray-500 animate-pulse">📲 Gaukite atsakymą greičiau — <a href="https://wa.me/+37060780220" class="underline text-green-700 hover:text-green-900">rašykite mums per WhatsApp</a></p>
     </div>
   </header>
 
@@ -90,22 +90,22 @@
       <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg">
         <h3 class="text-xl font-semibold mb-2">Automobilių paieška</h3>
         <p class="text-sm mb-4">Susisiekite dėl transporto priemonių paieškos ir atrankos visoje Europoje.</p>
-        <a href="https://wa.me/+37060780220" class="text-blue-700 underline hover:text-blue-900">CarsPro WhatsApp</a>
+        <a href="mailto:search@carspro.eu" class="text-blue-700 underline hover:text-blue-900">search@carspro.eu</a>
       </div>
       <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg">
         <h3 class="text-xl font-semibold mb-2">Techninė patikra</h3>
         <p class="text-sm mb-4">Klausimai dėl automobilio tikrinimo prieš pirkimą.</p>
-        <a href="https://wa.me/+37060780220" class="text-blue-700 underline hover:text-blue-900">CarsPro WhatsApp</a>
+        <a href="mailto:inspection@carspro.eu" class="text-blue-700 underline hover:text-blue-900">inspection@carspro.eu</a>
       </div>
       <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg">
         <h3 class="text-xl font-semibold mb-2">Transportavimas</h3>
         <p class="text-sm mb-4">Susisiekite dėl pervežimo logistikos, maršrutų ir kainų.</p>
-        <a href="https://wa.me/+37060780220" class="text-blue-700 underline hover:text-blue-900">CarsPro WhatsApp</a>
+        <a href="mailto:logistics@carspro.eu" class="text-blue-700 underline hover:text-blue-900">logistics@carspro.eu</a>
       </div>
       <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg">
         <h3 class="text-xl font-semibold mb-2">Muitinės dokumentai</h3>
         <p class="text-sm mb-4">Konsultacijos dėl importo ir dokumentų paruošimo.</p>
-        <a href="https://wa.me/+37060780220" class="text-blue-700 underline hover:text-blue-900">CarsPro WhatsApp</a>
+        <a href="mailto:customs@carspro.eu" class="text-blue-700 underline hover:text-blue-900">customs@carspro.eu</a>
       </div>
     </div>
 
