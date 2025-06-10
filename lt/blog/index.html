@@ -65,6 +65,83 @@
     </div>
   </div>
 </section>
+  <!-- Auction Focus Block -->
+<section class="bg-white py-6 border-t">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-xl font-bold mb-4">🏁 Aukcionų įžvalgos</h2>
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Kortelė apie brokerį -->
+      <div class="border p-4 rounded shadow hover:shadow-md transition">
+        <img alt="Automobilio pirkimas aukcione su brokeriu" class="w-full h-40 object-cover rounded mb-3" loading="lazy" src="/images/auction-broker-guide.webp"/>
+        <h3 class="font-semibold text-lg">Profesionalūs EU auto aukcionai: kodėl svarbus brokeris?</h3>
+        <p class="text-sm text-gray-600 mb-2">Sužinok, kaip brokeriai palengvina dalyvavimą aukcionuose, sumažina rizikas ir užtikrina saugų automobilio pristatymą iš tokių platformų kaip BCA, Copart ar Auto1.</p>
+        <a class="text-blue-600 text-sm underline" href="/blog/auction-broker-guide.html">Skaityti daugiau</a>
+      </div>
+
+      <!-- Žemėlapis su maršrutais -->
+      <div class="col-span-2 flex flex-col h-full">
+        <a href="https://carspro.lt/#shipping-form"
+           class="block cursor-pointer hover:shadow-lg transition-opacity h-full"
+           aria-label="Apskaičiuok auto transportavimo kainą">
+          <div class="border p-4 rounded shadow overflow-hidden bg-gray-50 h-full">
+            <h3 class="font-semibold text-lg mb-4 flex items-center gap-2">
+              <img src="/images/avtovoz-emoji.png" alt="Sunkvežimio ikona" class="h-5 inline-block">
+              Apskaičiuok kainą ir atstumą
+            </h3>
+            <div class="relative h-52 w-full">
+
+              <!-- Maršrutas 1: Berlynas – Vilnius -->
+              <svg viewBox="0 0 500 100" class="absolute w-full h-28 top-2 left-0">
+                <path d="M 0 70 Q 250 0 500 70" stroke="#888" stroke-dasharray="6 6" stroke-width="2" fill="none"/>
+              </svg>
+              <img src="/images/avtovoz-emoji.png" alt="Berlynas į Vilnių" class="absolute top-6 left-0 h-6 animate-[drive1_10s_linear_infinite] filter brightness-110 flip-horizontal">
+              <div class="absolute left-2 top-[100px] text-xs">🇩🇪 Berlynas</div>
+              <div class="absolute right-2 top-[100px] text-xs">🇱🇹 Vilnius</div>
+
+              <!-- Maršrutas 2: Amsterdamas – Varšuva -->
+              <svg viewBox="0 0 500 100" class="absolute w-full h-28 top-16 left-0">
+                <path d="M 0 70 Q 250 20 500 70" stroke="#555" stroke-dasharray="6 6" stroke-width="2" fill="none"/>
+              </svg>
+              <img src="/images/avtovoz-emoji.png" alt="Amsterdamas į Varšuvą" class="absolute top-[120px] left-0 h-6 animate-[drive2_12s_linear_infinite] filter hue-rotate-90 flip-horizontal">
+              <div class="absolute left-2 top-[152px] text-xs">🇳🇱 Amsterdamas</div>
+              <div class="absolute right-2 top-[152px] text-xs">🇵🇱 Varšuva</div>
+
+              <!-- Maršrutas 3: Paryžius – Praha -->
+              <svg viewBox="0 0 500 100" class="absolute w-full h-28 top-28 left-0">
+                <path d="M 0 70 Q 250 30 500 70" stroke="#444" stroke-dasharray="6 6" stroke-width="2" fill="none"/>
+              </svg>
+              <img src="/images/avtovoz-emoji.png" alt="Paryžius į Prahą" class="absolute top-[164px] left-0 h-6 animate-[drive3_14s_linear_infinite] filter hue-rotate-180 flip-horizontal">
+              <div class="absolute left-2 top-[196px] text-xs">🇫🇷 Paryžius</div>
+              <div class="absolute right-2 top-[196px] text-xs">🇨🇿 Praha</div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <style>
+    @keyframes drive1 {
+      0% { transform: translateX(0) scaleX(-1); }
+      100% { transform: translateX(500px) scaleX(-1); }
+    }
+    @keyframes drive2 {
+      0% { transform: translateX(0) scaleX(-1); }
+      100% { transform: translateX(500px) scaleX(-1); }
+    }
+    @keyframes drive3 {
+      0% { transform: translateX(0) scaleX(-1); }
+      100% { transform: translateX(500px) scaleX(-1); }
+    }
+    .flip-horizontal {
+      transform: scaleX(-1);
+    }
+  </style>
+</section>
+
+      
 <!-- Vertimas tik pradziai, toliau - pagal uzklausa -->
 </body>
 </html>
