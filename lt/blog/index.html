@@ -3,66 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blogas — Automobilių gabenimas ir patarimai | CarsPro</title>
-  <meta name="description" content="CarsPro blogas apie automobilių pirkimą, logistiką, mokesčius ir dažniausias klaidas perkant transporto priemones iš Europos.">
-  <meta name="keywords" content="automobilių blogas, pirkimas iš aukcionų, auto logistika, PVM gražinimas, CarsPro patarimai">
+  <title>CarsPro Blogas — Naudingi patarimai importuojant automobilius</title>
+  <meta name="description" content="Sužinokite, kaip išvengti dažniausių klaidų importuojant automobilius iš Europos. Gaukite patarimų iš logistikos ekspertų.">
+  <meta name="keywords" content="automobilių importas, patarimai, logistikos straipsniai, CarsPro blogas">
   <meta name="robots" content="index, follow">
-  <link rel="alternate" hreflang="en" href="https://carspro.lt/blog/" />
-  <link rel="alternate" hreflang="lt" href="https://carspro.lt/lt/blog/" />
   <link rel="canonical" href="https://carspro.lt/lt/blog/">
+  <link rel="alternate" hreflang="lt" href="https://carspro.lt/lt/blog/" />
+  <link rel="alternate" hreflang="en" href="https://carspro.lt/blog/" />
+  <link rel="alternate" hreflang="x-default" href="https://carspro.lt/blog/" />
   <meta property="og:type" content="website">
-  <meta property="og:title" content="CarsPro Blogas — Patarimai ir įžvalgos apie automobilių logistiką">
-  <meta property="og:description" content="Naudingi straipsniai apie automobilių gabenimą, pirkimą iš aukcionų, bei mokesčių tvarkymą.">
+  <meta property="og:title" content="CarsPro Blogas">
+  <meta property="og:description" content="Ekspertų įžvalgos apie automobilių importą, logistiką ir dokumentų tvarkymą Europoje.">
   <meta property="og:url" content="https://carspro.lt/lt/blog/">
   <meta property="og:image" content="https://carspro.lt/carspro-logo.png">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CarsPro Blogas">
+  <meta name="twitter:description" content="Naudingi straipsniai apie automobilių pirkimą, transportavimą ir pervežimą Europoje.">
+  <meta name="twitter:image" content="https://carspro.lt/carspro-logo.png">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    h1, h2 {
-      font-family: 'Montserrat', sans-serif;
-    }
-  </style>
 </head>
 <body class="bg-white text-gray-800">
   <header class="bg-white shadow p-4">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
       <a href="/lt/" class="block">
-        <img src="/carspro-logo.png" alt="CarsPro logotipas" class="h-20 w-auto" loading="lazy" />
+        <img src="/carspro-logo.png" alt="CarsPro Logo" class="h-32 w-auto" loading="lazy" />
       </a>
+      <div class="md:hidden">
+        <button id="menu-toggle" class="text-gray-800 text-2xl focus:outline-none" aria-label="Toggle navigation menu">☰</button>
+      </div>
       <nav class="hidden md:flex items-center space-x-4 text-sm">
+        <a href="/lt/" class="text-gray-700 hover:text-blue-600">Pradžia</a>
         <a href="/lt/auctions/" class="text-gray-700 hover:text-blue-600">Aukcionai</a>
-        <a href="/lt/blog/" class="text-gray-700 hover:text-blue-600 font-bold">Blogas</a>
-        <button onclick="setLanguage('lt')" class="border px-3 py-1">LT</button>
-        <button onclick="setLanguage('en')" class="border px-3 py-1">EN</button>
+        <a href="/lt/contacts/" class="text-gray-700 hover:text-blue-600">Kontaktai</a>
+        <button onclick="setLanguage('lt')" class="border px-3 py-1 text-sm">LT</button>
+        <button onclick="setLanguage('en')" class="border px-3 py-1 text-sm">EN</button>
       </nav>
     </div>
   </header>
 
-  <main class="max-w-4xl mx-auto p-6">
-    <h1 class="text-3xl font-bold mb-6 text-center">Blogas apie automobilių pirkimą ir logistiką</h1>
-    <p class="text-gray-600 text-center mb-8">Reguliariai dalinamės patarimais, aktualijomis ir atsakymais į dažniausiai užduodamus klausimus.</p>
+  <main class="max-w-6xl mx-auto px-4 py-10">
+    <h1 class="text-4xl font-bold mb-8">CarsPro Blogas</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-    <div class="grid gap-8">
-      <article class="border p-4 rounded shadow hover:shadow-md transition">
-        <a href="/lt/blog/pvm-grazinimas.html">
-          <h2 class="text-xl font-semibold mb-2">Kaip susigrąžinti PVM perkant automobilį iš ES</h2>
-          <p class="text-gray-600 text-sm">Sužinokite, kaip veikia PVM gražinimo procesas perkant transporto priemones ES aukcionuose.</p>
-        </a>
-      </article>
+      <a href="/lt/blog/importo-klaidos.html" class="block border rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+        <img src="/images/blog/mistakes.jpg" alt="Importo klaidos" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h2 class="text-xl font-semibold mb-2">5 dažniausios klaidos perkant automobilį iš užsienio</h2>
+          <p class="text-sm text-gray-600">Kaip išvengti tipinių spąstų ir pasirinkti patikimą transporto priemonę. Praktiniai patarimai iš mūsų ekspertų.</p>
+        </div>
+      </a>
 
-      <article class="border p-4 rounded shadow hover:shadow-md transition">
-        <a href="/lt/blog/transportavimo-kainos.html">
-          <h2 class="text-xl font-semibold mb-2">Transportavimo kainos: ką reikia žinoti</h2>
-          <p class="text-gray-600 text-sm">Svarbiausi faktoriai, lemiantys automobilio gabenimo kainą Europoje.</p>
-        </a>
-      </article>
+      <a href="/lt/blog/transporto-galimybes.html" class="block border rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+        <img src="/images/blog/transport-options.jpg" alt="Transporto galimybės" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h2 class="text-xl font-semibold mb-2">Automobilių transportavimo galimybės Baltijos šalyse</h2>
+          <p class="text-sm text-gray-600">Tralas, savarankiškas atsivežimas ar pilna logistika? Sužinokite skirtumus ir pasirinkite tinkamiausią variantą.</p>
+        </div>
+      </a>
 
-      <article class="border p-4 rounded shadow hover:shadow-md transition">
-        <a href="/lt/blog/dazniausios-klaidos.html">
-          <h2 class="text-xl font-semibold mb-2">Dažniausios klaidos perkant automobilį iš aukciono</h2>
-          <p class="text-gray-600 text-sm">Ko reikėtų vengti, kad automobilio pirkimo procesas būtų sklandus ir saugus.</p>
-        </a>
-      </article>
+      <a href="/lt/blog/kaip-nepermoketi.html" class="block border rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+        <img src="/images/blog/save-money.jpg" alt="Kaip nepermokėti" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h2 class="text-xl font-semibold mb-2">Kaip nepermokėti importuojant automobilį</h2>
+          <p class="text-sm text-gray-600">Mokesčiai, dokumentai, papildomi kaštai. Sužinokite, kaip tiksliai apskaičiuoti kainą ir išvengti netikėtumų.</p>
+        </div>
+      </a>
+
     </div>
   </main>
 
