@@ -28,6 +28,32 @@
   </style>
 </head>
 <body class="bg-white text-gray-800 font-sans">
+  <header class="bg-gray-100 p-4 shadow">
+  <div class="max-w-6xl mx-auto flex justify-between items-center">
+    <a href="/">
+      <img src="/carspro-logo.png" alt="CarsPro logotipas" class="h-32" />
+    </a>
+    <div class="md:hidden">
+      <button id="menu-toggle" class="text-gray-800 text-2xl focus:outline-none" aria-label="Perjungti navigacijos meniu">☰</button>
+    </div>
+    <nav class="hidden md:flex items-center space-x-4 text-sm" role="navigation" aria-label="Pagrindinė navigacija">
+      <a href="/" class="text-gray-700 hover:text-blue-600">Pagrindinis</a>
+      <a href="/auctions/" class="text-gray-700 hover:text-blue-600">Aukcionai</a>
+      <a href="/blog/" class="text-blue-700 font-semibold">Blogas</a>
+      <button onclick="setLanguage('lt')" class="border px-3 py-1 text-sm">LT</button>
+      <button onclick="setLanguage('en')" class="border px-3 py-1 text-sm">EN</button>
+    </nav>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden text-center mt-4 space-y-2">
+    <a href="/" class="block text-gray-700 hover:text-blue-600">Pagrindinis</a>
+    <a href="/auctions/" class="block text-gray-700 hover:text-blue-600">Aukcionai</a>
+    <a href="/blog/" class="block text-blue-700 font-semibold">Blogas</a>
+    <div class="flex justify-center gap-2">
+      <button onclick="setLanguage('lt')" class="border px-3 py-1 text-sm">LT</button>
+      <button onclick="setLanguage('en')" class="border px-3 py-1 text-sm">EN</button>
+    </div>
+  </div>
+</header>
 <!-- Vertimas tik pradziai, toliau - pagal uzklausa -->
 </body>
 </html>
