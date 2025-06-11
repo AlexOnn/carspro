@@ -37,17 +37,33 @@
     <div class="md:hidden">
       <button id="menu-toggle" class="text-gray-800 text-2xl focus:outline-none" aria-label="Toggle navigation menu">☰</button>
     </div>
-    <nav class="hidden md:flex items-center space-x-4 text-sm" role="navigation" aria-label="Pagrindinė navigacija">
+<!--     <nav class="hidden md:flex items-center space-x-4 text-sm" role="navigation" aria-label="Pagrindinė navigacija">
       <a href="/lt/" class="text-gray-700 hover:text-blue-600">Pagrindinis</a>
       <a href="/lt/auctions/" class="text-gray-700 hover:text-blue-600">Aukcionai</a>
       <a href="/lt/blog/" class="text-blue-700 font-semibold">Blogas</a>
+    </nav> -->
+    <nav class="hidden md:flex items-center space-x-4 text-sm" role="navigation" aria-label="Pagrindinė navigacija">
+    <a href="/lt/" class="text-gray-700 hover:text-blue-600">Pagrindinis</a>
+    <a href="/lt/auctions/" class="text-gray-700 hover:text-blue-600">Aukcionai</a>
+    <a href="/lt/blog/" class="text-blue-700 font-semibold">Blogas</a>
+    <button onclick="setLanguage('lt')" class="border px-3 py-1 text-sm">LT</button>
+    <button onclick="setLanguage('en')" class="border px-3 py-1 text-sm">EN</button>
     </nav>
   </div>
-  <div id="mobile-menu" class="hidden md:hidden text-center mt-4 space-y-2">
+<!--   <div id="mobile-menu" class="hidden md:hidden text-center mt-4 space-y-2">
     <a href="/lt/" class="block text-gray-700 hover:text-blue-600">Pagrindinis</a>
     <a href="/lt/auctions/" class="block text-gray-700 hover:text-blue-600">Aukcionai</a>
     <a href="/lt/blog/" class="block text-blue-700 font-semibold">Blogas</a>
+  </div> -->
+  <div id="mobile-menu" class="hidden md:hidden text-center mt-4 space-y-2">
+  <a href="/lt/" class="block text-gray-700 hover:text-blue-600">Pagrindinis</a>
+  <a href="/lt/auctions/" class="block text-gray-700 hover:text-blue-600">Aukcionai</a>
+  <a href="/lt/blog/" class="block text-blue-700 font-semibold">Blogas</a>
+  <div class="flex justify-center gap-2">
+    <button onclick="setLanguage('lt')" class="border px-3 py-1 text-sm">LT</button>
+    <button onclick="setLanguage('en')" class="border px-3 py-1 text-sm">EN</button>
   </div>
+</div>
 </header>
 
 <main class="max-w-4xl mx-auto px-4 py-10">
