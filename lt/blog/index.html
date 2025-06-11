@@ -37,20 +37,35 @@
       <button id="menu-toggle" class="text-gray-800 text-2xl focus:outline-none" aria-label="Perjungti navigacijos meniu">☰</button>
     </div>
     <nav class="hidden md:flex items-center space-x-4 text-sm" role="navigation" aria-label="Pagrindinė navigacija">
+      <a href="/lt/" class="text-gray-700 hover:text-blue-600">Pagrindinis</a>
+      <a href="/lt/auctions/" class="text-gray-700 hover:text-blue-600">Aukcionai</a>
+      <a href="/lt/blog/" class="text-blue-700 font-semibold">Blogas</a>
+      <a href="/blog/" hreflang="en" class="border px-3 py-1 text-sm">EN</a>
+    </nav>
+<!--     <nav class="hidden md:flex items-center space-x-4 text-sm" role="navigation" aria-label="Pagrindinė navigacija">
       <a href="/" class="text-gray-700 hover:text-blue-600">Pagrindinis</a>
       <a href="/auctions/" class="text-gray-700 hover:text-blue-600">Aukcionai</a>
       <a href="/blog/" class="text-blue-700 font-semibold">Blogas</a>
       <button onclick="setLanguage('lt')" class="border px-3 py-1 text-sm">LT</button>
       <button onclick="setLanguage('en')" class="border px-3 py-1 text-sm">EN</button>
-    </nav>
+    </nav> -->
   </div>
-  <div id="mobile-menu" class="hidden md:hidden text-center mt-4 space-y-2">
+    
+<!--   <div id="mobile-menu" class="hidden md:hidden text-center mt-4 space-y-2">
     <a href="/" class="block text-gray-700 hover:text-blue-600">Pagrindinis</a>
     <a href="/auctions/" class="block text-gray-700 hover:text-blue-600">Aukcionai</a>
     <a href="/blog/" class="block text-blue-700 font-semibold">Blogas</a>
     <div class="flex justify-center gap-2">
       <button onclick="setLanguage('lt')" class="border px-3 py-1 text-sm">LT</button>
       <button onclick="setLanguage('en')" class="border px-3 py-1 text-sm">EN</button>
+    </div>
+  </div> -->
+    <div id="mobile-menu" class="hidden md:hidden text-center mt-4 space-y-2">
+    <a href="/lt/" class="block text-gray-700 hover:text-blue-600">Pagrindinis</a>
+    <a href="/lt/auctions/" class="block text-gray-700 hover:text-blue-600">Aukcionai</a>
+    <a href="/lt/blog/" class="block text-blue-700 font-semibold">Blogas</a>
+    <div class="flex justify-center gap-2">
+      <a href="/blog/" hreflang="en" class="border px-3 py-1 text-sm">EN</a>
     </div>
   </div>
 </header>
