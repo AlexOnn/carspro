@@ -73,9 +73,9 @@
       </p>
     </div>
   </header>
-  <!-- main content remains unchanged -->
+
   <main class="max-w-6xl mx-auto px-4 py-10">
-  <!-- 1. Visual Timeline Explanation Section -->
+    <!-- Timeline section stays unchanged -->
     <section class="mb-16">
       <h2 class="text-2xl font-bold text-center mb-10">How Our Auction Service Works</h2>
       <div class="relative border-l-2 border-blue-500 ml-4">
@@ -106,78 +106,48 @@
         </div>
       </div>
     </section>
+
+    <!-- Auction Request Form -->
     <section class="max-w-3xl mx-auto px-4 py-10">
-      <h2 class="text-2xl font-bold mb-6 text-center">Request Auction Evaluation</h2>
-      <p class="text-gray-700 mb-2 text-center">
-        Found a car on a European auction site? Send us the link — we’ll verify it, estimate full costs (including transport & fees), and reply within hours.
-      </p>
-      <p class="text-sm text-center text-red-500 mb-6">Note: This form is currently in beta. Automatic email processing is under development.</p>
+      <h2 id="form-title" class="text-2xl font-bold mb-6 text-center"></h2>
+      <p id="form-desc" class="text-gray-700 mb-2 text-center"></p>
+      <p id="form-beta" class="text-sm text-center text-red-500 mb-6"></p>
+
       <div class="bg-white p-6 rounded shadow-md">
         <form id="auctionForm" class="space-y-4">
-      <div>
-      <label id="label-auction-url" for="auction-url" class="block font-medium text-gray-700"></label>
-      <input type="url" id="auction-url" name="auctionUrl" required class="mt-1 w-full border rounded px-3 py-2">
-      </div>
-      <div>
-      <label id="label-comments" for="notes" class="block font-medium text-gray-700"></label>
-      <textarea id="notes" name="comments" rows="3" class="mt-1 w-full border rounded px-3 py-2"></textarea>
-      </div>
-      <div class="flex flex-col md:flex-row gap-4">
-      <div class="w-full">
-        <label id="label-email" for="email" class="block font-medium text-gray-700"></label>
-        <input type="email" id="email" name="email" required class="mt-1 w-full border rounded px-3 py-2">
-      </div>
-      <div class="w-full">
-        <label id="label-whatsapp" for="whatsapp" class="block font-medium text-gray-700"></label>
-        <input type="text" id="whatsapp" name="whatsapp" class="mt-1 w-full border rounded px-3 py-2">
-      </div>
-    </div>
-    <button id="button-submit" type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"></button>
-    <p id="formStatus" class="hidden text-center mt-2 text-sm"></p>
-  </form>
-</div>
-<p id="form-footer" class="mt-6 text-center text-sm text-gray-500"></p>
-
-<!-- conteiner for the cards -->
-<div id="auction-cards" class="mt-10 grid md:grid-cols-2 gap-6 text-sm text-gray-700"></div>
-      
-
-      <div class="mt-10 grid md:grid-cols-2 gap-6 text-sm text-gray-700">
-        <div class="border rounded shadow p-4">
-          <h3 class="text-lg font-semibold mb-1">BCA Europe</h3>
-          <p>Commission from €250. Wide selection of cars across Europe. VIN reports and inspection available.</p>
-        </div>
-        <div class="border rounded shadow p-4">
-          <h3 class="text-lg font-semibold mb-1">Auto1</h3>
-          <p>Commission from €250. Fast turnover, ideal for verified dealers. Local and cross-border listings.</p>
-        </div>
-        <div class="border rounded shadow p-4">
-          <h3 class="text-lg font-semibold mb-1">Copart</h3>
-          <p>Commission from €250. Salvage and damaged vehicles. Important to check repair viability.</p>
-        </div>
-        <div class="border rounded shadow p-4">
-          <h3 class="text-lg font-semibold mb-1">Openlane (formerly ADESA)</h3>
-          <p>Commission from €250. Dealer-to-dealer transactions. Well-documented auction terms.</p>
-        </div>
+          <div>
+            <label id="label-auction-url" for="auction-url" class="block font-medium text-gray-700"></label>
+            <input type="url" id="auction-url" name="auctionUrl" required class="mt-1 w-full border rounded px-3 py-2">
+          </div>
+          <div>
+            <label id="label-comments" for="notes" class="block font-medium text-gray-700"></label>
+            <textarea id="notes" name="comments" rows="3" class="mt-1 w-full border rounded px-3 py-2"></textarea>
+          </div>
+          <div class="flex flex-col md:flex-row gap-4">
+            <div class="w-full">
+              <label id="label-email" for="email" class="block font-medium text-gray-700"></label>
+              <input type="email" id="email" name="email" required class="mt-1 w-full border rounded px-3 py-2">
+            </div>
+            <div class="w-full">
+              <label id="label-whatsapp" for="whatsapp" class="block font-medium text-gray-700"></label>
+              <input type="text" id="whatsapp" name="whatsapp" class="mt-1 w-full border rounded px-3 py-2">
+            </div>
+          </div>
+          <button id="button-submit" type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"></button>
+          <p id="formStatus" class="hidden text-center mt-2 text-sm"></p>
+        </form>
       </div>
 
-      <p class="mt-6 text-center text-sm text-gray-500">Just send the vehicle listing URL — we'll take care of the rest.</p>
+      <p id="form-footer" class="mt-6 text-center text-sm text-gray-500"></p>
+
+      <div id="auction-cards" class="mt-10 grid md:grid-cols-2 gap-6 text-sm text-gray-700"></div>
     </section>
   </main>
+
   <footer class="text-center py-6 text-gray-500 text-sm">
     &copy; 2025 CarsPro. All rights reserved. Powered by UAB DEKO GROUP
   </footer>
-<!--   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const toggle = document.getElementById('menu-toggle');
-      const menu = document.getElementById('mobile-menu');
-      if (toggle && menu) {
-        toggle.addEventListener('click', function () {
-          menu.classList.toggle('hidden');
-        });
-      }
-    });
-  </script> -->
+
   <script src="/js/main.js"></script>
   <script src="/js/auction-form.js"></script>
 </body>
