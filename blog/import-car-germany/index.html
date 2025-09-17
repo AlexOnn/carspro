@@ -133,7 +133,18 @@
    &copy; 2025 CarsPro. All rights reserved. Powered by UAB DEKO GROUP
   </footer>
 
-   <script type="application/ld+json">
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+    }
+  });
+  </script>
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -155,17 +166,6 @@
     "datePublished": "2025-05-29",
      "dateModified": "2025-09-17"
   }
-</script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('mobile-menu');
-    if (toggle && menu) {
-      toggle.addEventListener('click', () => {
-        menu.classList.toggle('hidden');
-      });
-    }
-  });
 </script>
 <script src="/js/main.js"></script>
 </body>
