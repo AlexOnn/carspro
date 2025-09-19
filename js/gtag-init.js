@@ -16,3 +16,17 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+//calculate_price
+document.addEventListener('DOMContentLoaded', () => {
+  const calcForm = document.querySelector('form'); // если форма одна
+  if (calcForm) {
+    calcForm.addEventListener('submit', (e) => {
+      console.log('GA4 event sent: calculate_price');
+      gtag('event', 'calculate_price', {
+        'event_category': 'engagement',
+        'event_label': 'Calculator form submit'
+      });
+    });
+  }
+});
+
